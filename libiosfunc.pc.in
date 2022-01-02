@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libiosfunc
+Description: Provide missing Darwin syscalls for iOS
+Version: @LIBIOSFUNC_VERSION@
+Libs: -L${libdir} -liosfunc
+Libs.private: @LIBS_EXTRA@
+Cflags: -I${includedir}/

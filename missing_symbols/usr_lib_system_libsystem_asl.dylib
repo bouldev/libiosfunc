@@ -1,0 +1,6 @@
+__asl_mt_shim_fork_child
+__asl_mt_shim_pipe_copy
+__asl_mt_shim_send_message
+__mt_shim_lock
+__mt_shim_pipe
+_syslog$DARWIN_EXTSN

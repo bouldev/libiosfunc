@@ -1,0 +1,24 @@
+commit 406edaaf59bcc886ea4dbf04d41fe60e8e167168
+Merge: 22e511c 4fcbd42
+Author: Torrekie Gen <adeade2015@outlook.com>
+Date:   Sun Jan 2 11:50:21 2022 +0800
+
+    Merge pull request #1 from bouldev/add-license-1
+
+    Create LICENSE
+
+commit 4fcbd4230a7d5de39dbc2f50cf0b3efbd3daf3df
+Author: Torrekie Gen <adeade2015@outlook.com>
+Date:   Sun Jan 2 11:49:58 2022 +0800
+
+    Create LICENSE
+
+A	LICENSE
+
+commit 22e511c52e3e226a6ea8cea02fe91fe6cab1ce76
+Author: Torrekie Gen <adeade2015@outlook.com>
+Date:	Sun Jan 2 11:48:10 2022 +0800
+
+    Initial commit
+
+A	README.md
