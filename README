@@ -12,10 +12,12 @@
 
 *** CREDITS ***
 
- Open Source Projects used:
+ Some codes are from following Open Source Softwares:
 
  LLVM: https://github.com/llvm/llvm-project
  Libc (Apple's fork): https://opensource.apple.com/source/Libc/Libc-1439.141.1
+ Syslog: https://opensource.apple.com/source/syslog/syslog-385
+ XNU: https://opensource.apple.com/source/xnu/xnu-7195.141.2
  
 *** DISCLAIMER ***
 
