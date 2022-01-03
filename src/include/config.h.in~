@@ -21,12 +21,6 @@
 /* Define to 1 if you have the <os/lock_private.h> header file. */
 #undef HAVE_OS_LOCK_PRIVATE_H
 
-/* Define to 1 if you have the <paths.h> header file. */
-#undef HAVE_PATHS_H
-
-/* Define to 1 if you have the `ptrdiff_t' */
-#undef HAVE_PTRDIFF_T
-
 /* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H
 
@@ -51,17 +45,8 @@
 /* Define to 1 if you have the <sys/mman.h> header file. */
 #undef HAVE_SYS_MMAN_H
 
-/* Define to 1 if you have the <sys/param.h> header file. */
-#undef HAVE_SYS_PARAM_H
-
-/* Define to 1 if you have the <sys/socket.h> header file. */
-#undef HAVE_SYS_SOCKET_H
-
 /* Define to 1 if you have the <sys/stat.h> header file. */
 #undef HAVE_SYS_STAT_H
-
-/* Define to 1 if you have the <sys/time.h> header file. */
-#undef HAVE_SYS_TIME_H
 
 /* Define to 1 if you have the <sys/types.h> header file. */
 #undef HAVE_SYS_TYPES_H
@@ -74,12 +59,6 @@
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
-
-/* Define to 1 if you have the <utmpx.h> header file. */
-#undef HAVE_UTMPX_H
-
-/* Define to 1 if you have the <utmp.h> header file. */
-#undef HAVE_UTMP_H
 
 /* Define to 1 if you have the <xpc/private.h> header file. */
 #undef HAVE_XPC_PRIVATE_H

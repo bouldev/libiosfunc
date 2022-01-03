@@ -1,0 +1,15 @@
+localeconv.c
+atexit.c
+runedepreciated.c
+utmpx-darwin.c
+utmpx.c
+setenv.c
+xprintf.c
+wordexp.c
+frune.c
+login.c
+logout.c
+mbrune.c
+setinvalidrune.c
+setrunelocale.c
+findfp.c
