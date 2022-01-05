@@ -1,6 +1,9 @@
-dist_doc_DATA = README
+dist_doc_DATA = README AUTHORS COPYING LICENSE
+
+#SUBDIRS = src
 
 EXTRA_DIST = 	generate-changelog.sh \
+		autogen.sh \
 		TODO
 
 ACLOCAL_AMFLAGS = -I m4
@@ -40,7 +43,11 @@ libiosfunc_la_LDFLAGS = -no-undefined -release 0.0.1 -Wl,-U,__BIG5_init \
 			-Wl,-U,__ascii_init \
 			-Wl,-U,__none_init \
 			-Wl,-read_only_relocs,suppress
-libiosfunc_la_SOURCES = src/libSystem/libcompiler_rt/clear_cache.c \
+libiosfunc_la_SOURCES = src/include/common.h \
+			src/include/config.h.in \
+			src/include/xnu_headers \
+			src/libSystem \
+			src/libSystem/libcompiler_rt/clear_cache.c \
 			src/libSystem/libcompiler_rt/enable_execute_stack.c \
 			src/libSystem/libsystem_asl/asl_mt_shim.c \
 			src/libSystem/libsystem_c/localeconv.c \

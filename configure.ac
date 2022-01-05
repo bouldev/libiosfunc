@@ -2,6 +2,8 @@ AC_INIT([libiosfunc],[0.0.1],[me@torrekie.dev],[],[https://github.com/bouldev/li
 AC_CONFIG_SRCDIR(README)
 AC_CONFIG_MACRO_DIR(m4)
 AM_INIT_AUTOMAKE(subdir-objects)
+dnl AM_GNU_GETTEXT(external)
+dnl AM_GNU_GETTEXT_VERSION(0.21)
 LT_INIT
 
 AC_PROG_CC
