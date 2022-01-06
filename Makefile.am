@@ -2,6 +2,8 @@ dist_doc_DATA = README AUTHORS COPYING LICENSE
 
 #SUBDIRS = src
 
+export IPHONEOS_DEPLOYMENT_TARGET SDKROOT
+
 EXTRA_DIST = 	generate-changelog.sh \
 		autogen.sh \
 		TODO

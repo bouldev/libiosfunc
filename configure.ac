@@ -1,14 +1,14 @@
 AC_INIT([libiosfunc],[0.0.1],[me@torrekie.dev],[],[https://github.com/bouldev/libiosfunc])
 AC_CONFIG_SRCDIR(README)
-AC_CONFIG_MACRO_DIR(m4)
+AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE(subdir-objects)
 dnl AM_GNU_GETTEXT(external)
 dnl AM_GNU_GETTEXT_VERSION(0.21)
 LT_INIT
 
-AC_PROG_CC
+AC_PROG_CC([clang cc])
 AC_PROG_CPP
-AC_PROG_CXX
+AC_PROG_CXX([clang++ c++])
 AC_PROG_RANLIB
 
 AC_CONFIG_HEADERS([src/include/config.h])
@@ -30,6 +30,40 @@ AC_TYPE_UINT16_T
 AC_TYPE_UINT32_T
 AC_TYPE_UINT64_T
 AC_TYPE_UID_T
+AC_ARG_VAR([XCRUN], [Xcode CLT xcrun command])
+AC_ARG_VAR([SDKROOT], [Specify a sysroot if you want, default to XCRUN result or just "/"])
+dnl AC_ARG_WITH([ios-target], [AS_HELP_STRING([--with-ios-target], [Target iOS version, defalut to 12.0])], [AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [$withval])], [AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])])
+AC_ARG_VAR([IPHONEOS_DEPLOYMENT_TARGET], [Target iOS version, defalut to 12.0])
+AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])
+if test "x$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_set" = xset; then
+	AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_value])
+else
+	AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])
+fi
+AC_SUBST([SDKROOT], [/])
+if test "x$ac_cv_env_XCRUN_set" = x; then
+	AC_PATH_PROG([XCRUN],[xcrun],[no])
+else
+	AC_SUBST([ac_cv_path_XCRUN], [$XCRUN])
+fi
+AC_MSG_CHECKING([if $XCRUN able to find iPhoneOS.sdk])
+if test "x$ac_cv_path_XCRUN" != xno && test "x$ac_cv_env_SDKROOT_set" = x; then
+	AS_IF([$XCRUN --sdk iphoneos --show-sdk-path &> /dev/null], [
+		SDKROOT=`$XCRUN --sdk iphoneos --show-sdk-path`
+		AC_MSG_RESULT([$SDKROOT])
+	], [
+		AC_MSG_RESULT([no])
+		AC_MSG_WARN([$XCRUN is broken])
+	])
+elif test "x$ac_cv_env_SDKROOT_set" != x; then
+	SDKROOT="$ac_cv_env_SDKROOT_value"
+	AC_MSG_RESULT([user defined: $SDKROOT])
+fi
+CFLAGS="$CFLAGS -isysroot $SDKROOT"
+
+AX_CHECK_COMPILE_FLAG(["-mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET"], [CFLAGS="$CFLAGS -mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET"], [
+	AC_MSG_ERROR([Clang with -mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET support is required])
+], [-Wno-incompatible-sysroot -Werror])
 dnl
 dnl if test "x$ac_cv_header_os_lock_private_h" != xyes ||
 dnl	test "x$ac_cv_header_xpc_xpc_h" != xyes ||
