@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/param.h>
+#include <common.h>
 
 #ifdef UTMP_COMPAT
 #define UTMP_COMPAT_UTMP0	0x01
@@ -95,7 +96,7 @@ struct utmpx32 {
 };
 #endif /* __LP64__ */
 
-struct _utmpx *__default_utx(void);
+AVOID_CONFLICT struct _utmpx *__default_utx(void);
 
 void __endutxent(struct _utmpx *);
 struct utmpx *__getutxent(struct _utmpx *);

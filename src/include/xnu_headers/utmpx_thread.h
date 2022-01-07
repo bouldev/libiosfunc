@@ -28,13 +28,14 @@
 #ifndef _UTMPX_THREAD_H_
 #define _UTMPX_THREAD_H_
 
+#include <common.h>
 #include <utmpx.h>
 
 struct _utmpx; /* forward reference */
 typedef struct _utmpx *utmpx_t;
 
 __BEGIN_DECLS
-int		 _closeutx(utmpx_t);
+AVOID_CONFLICT int		 _closeutx(utmpx_t);
 void    	 _endutxent(utmpx_t);
 struct utmpx	*_getutxent(utmpx_t);
 struct utmpx	*_getutxid(utmpx_t, const struct utmpx *);

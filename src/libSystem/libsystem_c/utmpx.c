@@ -96,7 +96,7 @@ __setutxent(struct _utmpx *U)
 #endif /* __LP64__ */
 }
 
-void
+AVOID_CONFLICT void
 _setutxent(struct _utmpx *U)
 {
 
@@ -107,7 +107,7 @@ _setutxent(struct _utmpx *U)
 }
 
 
-void
+AVOID_CONFLICT void
 setutxent(void)
 {
 	_setutxent(__default_utx());
@@ -128,7 +128,7 @@ __endutxent(struct _utmpx *U)
 }
 
 
-void
+AVOID_CONFLICT void
 _endutxent(struct _utmpx *U)
 {
 	TEST_UTMPX_T("_endutxent", U);
@@ -138,7 +138,7 @@ _endutxent(struct _utmpx *U)
 }
 
 
-void
+AVOID_CONFLICT void
 endutxent(void)
 {
 	_endutxent(__default_utx());
@@ -229,7 +229,7 @@ fail:
 
 
 struct utmpx *
-_getutxent(struct _utmpx *U)
+AVOID_CONFLICT _getutxent(struct _utmpx *U)
 {
 	struct utmpx *ret;
 
@@ -242,14 +242,14 @@ _getutxent(struct _utmpx *U)
 
 
 struct utmpx *
-getutxent(void)
+AVOID_CONFLICT getutxent(void)
 {
 	return _getutxent(__default_utx());
 }
 
 
 struct utmpx *
-_getutxid(struct _utmpx *U, const struct utmpx *utx)
+AVOID_CONFLICT _getutxid(struct _utmpx *U, const struct utmpx *utx)
 {
 	struct utmpx temp;
 	const struct utmpx *ux;
@@ -274,7 +274,7 @@ _getutxid(struct _utmpx *U, const struct utmpx *utx)
 
 
 struct utmpx *
-getutxid(const struct utmpx *utx)
+AVOID_CONFLICT getutxid(const struct utmpx *utx)
 {
 	return _getutxid(__default_utx(), utx);
 }
@@ -344,7 +344,7 @@ __getutxline(struct _utmpx *U, const struct utmpx *utx)
 
 
 struct utmpx *
-_getutxline(struct _utmpx *U, const struct utmpx *utx)
+AVOID_CONFLICT _getutxline(struct _utmpx *U, const struct utmpx *utx)
 {
 	struct utmpx *ret;
 
@@ -357,14 +357,14 @@ _getutxline(struct _utmpx *U, const struct utmpx *utx)
 
 
 struct utmpx *
-getutxline(const struct utmpx *utx)
+AVOID_CONFLICT getutxline(const struct utmpx *utx)
 {
 	return _getutxline(__default_utx(), utx);
 }
 
 
 struct utmpx *
-_pututxline(struct _utmpx *U, const struct utmpx *utx)
+AVOID_CONFLICT _pututxline(struct _utmpx *U, const struct utmpx *utx)
 {
 	struct utmpx *ux;
 
@@ -387,7 +387,7 @@ _pututxline(struct _utmpx *U, const struct utmpx *utx)
 
 
 struct utmpx *
-pututxline(const struct utmpx *utx)
+AVOID_CONFLICT pututxline(const struct utmpx *utx)
 {
 	return _pututxline(__default_utx(), utx);
 }
@@ -539,7 +539,7 @@ __utmpxname(struct _utmpx *U, const char *fname)
 	return 1;
 }
 
-int
+AVOID_CONFLICT int
 _utmpxname(struct _utmpx *U, const char *fname)
 {
 	int ret;
@@ -551,7 +551,7 @@ _utmpxname(struct _utmpx *U, const char *fname)
 	return ret;
 }
 
-int
+AVOID_CONFLICT int
 utmpxname(const char *fname)
 {
 	return _utmpxname(__default_utx(), fname);

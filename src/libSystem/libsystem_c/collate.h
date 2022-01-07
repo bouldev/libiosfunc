@@ -35,6 +35,7 @@
 #include <sys/types.h>
 #endif /* !__LIBC__ */
 #include <limits.h>
+#include <common.h>
 
 #define STR_LEN 10
 #define TABLE_SIZE 100
@@ -105,13 +106,13 @@ __darwin_wchar_t	*__collate_mbstowcs(const char *, locale_t);
 __darwin_wchar_t	*__collate_wcsdup(const __darwin_wchar_t *);
 __darwin_wchar_t	*__collate_substitute(const __darwin_wchar_t *, int, locale_t);
 int	__collate_load_tables(const char *, locale_t);
-void	__collate_lookup_l(const __darwin_wchar_t *, int *, int *, int *, locale_t);
+AVOID_CONFLICT void	__collate_lookup_l(const __darwin_wchar_t *, int *, int *, int *, locale_t);
 void	__collate_lookup_which(const __darwin_wchar_t *, int *, int *, int, locale_t);
 void	__collate_xfrm(const __darwin_wchar_t *, __darwin_wchar_t **, locale_t);
 int	__collate_range_cmp(__darwin_wchar_t, __darwin_wchar_t, locale_t);
 size_t	__collate_collating_symbol(__darwin_wchar_t *, size_t, const char *, size_t, __darwin_mbstate_t *, locale_t);
 int	__collate_equiv_class(const char *, size_t, __darwin_mbstate_t *, locale_t);
-size_t	__collate_equiv_match(int, __darwin_wchar_t *, size_t, __darwin_wchar_t, const char *, size_t, __darwin_mbstate_t *, size_t *, locale_t);
+AVOID_CONFLICT size_t	__collate_equiv_match(int, __darwin_wchar_t *, size_t, __darwin_wchar_t, const char *, size_t, __darwin_mbstate_t *, size_t *, locale_t);
 #else /* !__LIBC__ */
 void	__collate_lookup(const unsigned char *, int *, int *, int *);
 #endif /* __LIBC__ */

@@ -1,0 +1,19 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_darwin.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_darwin.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_darwin.dylib.nm	2022-01-07 15:21:11.368788366 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_darwin.dylib.nm	2022-01-07 15:21:35.568358079 +0800
+@@ -14,6 +14,7 @@
+ _memdup_np
+ _os_assert_mach
+ _os_assert_mach_port_status
++_os_boot_mode_query
+ _os_crash_get_reporter_port_array
+ _os_crash_port_array_deallocate
+ _os_crash_set_reporter_port
+@@ -43,6 +44,7 @@
+ _os_variant_has_internal_diagnostics
+ _os_variant_has_internal_ui
+ _os_variant_init_4launchd
++_os_variant_is_basesystem
+ _os_variant_is_darwinos
+ _os_variant_is_recovery
+ _os_variant_uses_ephemeral_storage

@@ -1,0 +1,76 @@
+diff -ur ios14.2-symbols/usr/lib/system/libdyld.dylib.nm macosx11.2.3-symbols/usr/lib/system/libdyld.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libdyld.dylib.nm	2022-01-07 15:21:11.320369713 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libdyld.dylib.nm	2022-01-07 15:21:35.516003551 +0800
+@@ -1,3 +1,31 @@
++_NSAddImage
++_NSAddLibrary
++_NSAddLibraryWithSearching
++_NSAddressOfSymbol
++_NSCreateObjectFileImageFromFile
++_NSCreateObjectFileImageFromMemory
++_NSDestroyObjectFileImage
++_NSGetSectionDataInObjectFileImage
++_NSInstallLinkEditErrorHandlers
++_NSIsSymbolDefinedInObjectFileImage
++_NSIsSymbolNameDefined
++_NSIsSymbolNameDefinedInImage
++_NSIsSymbolNameDefinedWithHint
++_NSLibraryNameForModule
++_NSLinkEditError
++_NSLinkModule
++_NSLookupAndBindSymbol
++_NSLookupAndBindSymbolWithHint
++_NSLookupSymbolInImage
++_NSLookupSymbolInModule
++_NSModuleForSymbol
++_NSNameOfModule
++_NSNameOfSymbol
++_NSSymbolDefinitionCountInObjectFileImage
++_NSSymbolDefinitionNameInObjectFileImage
++_NSSymbolReferenceCountInObjectFileImage
++_NSSymbolReferenceNameInObjectFileImage
++_NSUnLinkModule
+ _NSVersionOfLinkTimeLibrary
+ _NSVersionOfRunTimeLibrary
+ _NXArgc
+@@ -6,13 +34,16 @@
+ __ZN5dyld316compatFuncLookupEPKcPPv
+ __ZN5dyld318entryVectorForDyldE
+ ___progname
++__dyld_all_twolevel_modules_prebound
+ __dyld_atfork_parent
+ __dyld_atfork_prepare
++__dyld_bind_fully_image_containing_address
+ __dyld_find_unwind_sections
+ __dyld_for_each_objc_class
+ __dyld_for_each_objc_protocol
+ __dyld_fork_child
+ __dyld_get_image_header
++__dyld_get_image_header_containing_address
+ __dyld_get_image_name
+ __dyld_get_image_slide
+ __dyld_get_image_uuid
+@@ -22,14 +53,20 @@
+ __dyld_get_shared_cache_range
+ __dyld_get_shared_cache_uuid
+ __dyld_has_fix_for_radar
++__dyld_image_containing_address
+ __dyld_image_count
+ __dyld_images_for_addresses
+ __dyld_initializer
+ __dyld_is_memory_immutable
+ __dyld_is_objc_constant
+ __dyld_launch_mode
++__dyld_launched_prebound
++__dyld_lookup_and_bind
++__dyld_lookup_and_bind_fully
++__dyld_lookup_and_bind_with_hint
+ __dyld_missing_symbol_abort
+ __dyld_objc_notify_register
++__dyld_present
+ __dyld_process_info_create
+ __dyld_process_info_for_each_aot_image
+ __dyld_process_info_for_each_image
+Only in macosx11.2.3-symbols/usr/lib/system: libkeymgr.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib/system: libkxld.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib/system: libquarantine.dylib.nm

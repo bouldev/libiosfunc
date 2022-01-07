@@ -1,8 +1,8 @@
 #ifndef LIBIOSFUNC_H
 #define LIBIOSFUNC_H
 
-#define IOSFUNC_PUBLIC __attribute__ ((visibility ("default")))
-#define IOSFUNC_HIDDEN __attribute__ ((visibility ("hidden")))
+#define IOSFUNC_PUBLIC __attribute__((visibility("default")))
+#define IOSFUNC_HIDDEN __attribute__((visibility("hidden")))
 
 #ifdef __cplusplus
 extern "C" {

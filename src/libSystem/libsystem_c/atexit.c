@@ -42,7 +42,7 @@ static char sccsid[] = "@(#)atexit.c	8.2 (Berkeley) 7/3/94";
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/stdlib/atexit.c,v 1.8 2007/01/09 00:28:09 imp Exp $");
 #include <TargetConditionals.h>
-
+#include <common.h>
 #include "namespace.h"
 #include <errno.h>
 #include <stddef.h>
@@ -145,7 +145,7 @@ atexit_register(struct atexit_fn *fptr)
 /*
  * Register a function to be performed at exit.
  */
-int
+AVOID_CONFLICT int
 atexit(void (*func)(void))
 {
 	struct atexit_fn fn;
@@ -169,7 +169,7 @@ atexit(void (*func)(void))
 }
 
 #ifdef __BLOCKS__
-int
+AVOID_CONFLICT int
 atexit_b(void (^block)(void))
 {
 	struct atexit_fn fn;
@@ -189,7 +189,7 @@ atexit_b(void (^block)(void))
  * Register a function to be performed at exit or when an shared object
  * with given dso handle is unloaded dynamically.
  */
-int
+AVOID_CONFLICT int
 __cxa_atexit(void (*func)(void *), void *arg, void *dso)
 {
 	struct atexit_fn fn;
@@ -229,7 +229,7 @@ __cxa_in_range(const struct __cxa_range_t ranges[],
  * a range specified.
  * Note: rangeCount==0, means call all handlers.
  */
-void
+AVOID_CONFLICT void
 __cxa_finalize_ranges(const struct __cxa_range_t ranges[], unsigned int count)
 {
 	struct atexit *p;
@@ -304,7 +304,7 @@ restart:
  * object owning 'dso'.  Note: if 'dso' is NULL, then all remaining
  * handlers are called.
  */
-void
+AVOID_CONFLICT void
 __cxa_finalize(const void *dso)
 {
 	if (dso != NULL) {

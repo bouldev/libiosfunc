@@ -1,0 +1,20 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_platform.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_platform.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_platform.dylib.nm	2022-01-07 15:21:11.424373018 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_platform.dylib.nm	2022-01-07 15:21:35.620374398 +0800
+@@ -22,6 +22,8 @@
+ _OSAtomicDecrement64Barrier
+ _OSAtomicDequeue
+ _OSAtomicEnqueue
++_OSAtomicFifoDequeue
++_OSAtomicFifoEnqueue
+ _OSAtomicIncrement32
+ _OSAtomicIncrement32Barrier
+ _OSAtomicIncrement64
+@@ -47,6 +49,7 @@
+ ___libplatform_init
+ ___os_once_reset
+ ___platform_sigaction
++__ctx_done
+ __longjmp
+ __os_alloc_once
+ __os_lock_type_eliding

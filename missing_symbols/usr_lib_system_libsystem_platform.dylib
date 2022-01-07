@@ -1,6 +1,0 @@
-_OSAtomicFifoDequeue
-_OSAtomicFifoEnqueue
-__ctx_done
-__ctx_start
-__setcontext
-_populate_signal_stack_context

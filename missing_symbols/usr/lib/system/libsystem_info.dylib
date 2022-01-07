@@ -1,0 +1,19 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_info.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_info.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_info.dylib.nm	2022-01-07 15:21:11.414961603 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_info.dylib.nm	2022-01-07 15:21:35.611244275 +0800
+@@ -5,6 +5,7 @@
+ _LI_set_thread_list
+ ___dn_skipname
+ __authenticate
++__ds_running
+ __gai_nat64_can_v4_address_be_synthesized
+ __gai_serv_to_port
+ __gai_simple
+@@ -15,6 +16,7 @@
+ __null_auth
+ __res
+ __seterr_reply
++__si_disable_opendirectory
+ __yp_dobind
+ _alias_endent
+ _alias_getbyname

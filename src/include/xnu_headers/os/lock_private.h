@@ -278,6 +278,7 @@ void os_lock_unlock(os_lock_t lock);
  * of the lock is currently on core. This should only be used for locks
  * where the protected critical section is always extremely short.
  */
+
 OS_OPTIONS(os_unfair_lock_options, uint32_t,
 	OS_UNFAIR_LOCK_NONE OS_SWIFT_NAME(None)
 		OS_UNFAIR_LOCK_AVAILABILITY = 0x00000000,

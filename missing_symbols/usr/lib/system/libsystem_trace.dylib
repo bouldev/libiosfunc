@@ -1,0 +1,12 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_trace.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_trace.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_trace.dylib.nm	2022-01-07 15:21:11.155191050 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_trace.dylib.nm	2022-01-07 15:21:35.321721647 +0800
+@@ -36,6 +36,7 @@
+ __os_signpost_pack_send
+ __os_state_request_for_pidlist
+ __os_trace_atm_diagnostic_config
++__os_trace_basesystem_storage_available
+ __os_trace_calloc
+ __os_trace_commpage_compute
+ __os_trace_fdscandir_b
+Only in macosx11.2.3-symbols/usr/lib/system: libunc.dylib.nm

@@ -421,11 +421,12 @@ xpc_get_type(xpc_object_t object);
  * A string describing the type of an object, like "string" or "int64".
  * This string should not be freed or modified.
  */
+#ifdef __AVAILABILITY_INTERNAL__IPHONE_13_0
 __OSX_AVAILABLE_STARTING(__MAC_10_15, __IPHONE_13_0)
 XPC_EXPORT XPC_NONNULL1
 const char *
 xpc_type_get_name(xpc_type_t type);
-
+#endif
 /*!
  * @function xpc_copy
  *

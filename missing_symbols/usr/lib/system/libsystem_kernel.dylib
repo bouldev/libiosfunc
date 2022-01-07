@@ -1,0 +1,130 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_kernel.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_kernel.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_kernel.dylib.nm	2022-01-07 15:21:11.339401666 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_kernel.dylib.nm	2022-01-07 15:21:35.533649630 +0800
+@@ -41,12 +41,16 @@
+ ___fcntl_nocancel
+ ___fork
+ ___fs_snapshot
++___fstat
+ ___fstat64_extended
+ ___fstat_extended
++___fstatat
++___fstatfs
+ ___fsync_nocancel
+ ___get_remove_counter
+ ___getattrlist
+ ___getdirentries64
++___getfsstat
+ ___gethostuuid
+ ___getlogin
+ ___getpeername
+@@ -78,6 +82,7 @@
+ ___listen
+ ___log_data
+ ___lseek
++___lstat
+ ___lstat64_extended
+ ___lstat_extended
+ ___mac_execve
+@@ -217,8 +222,10 @@
+ ___sigwait
+ ___socketpair
+ ___stack_snapshot_with_config
++___stat
+ ___stat64_extended
+ ___stat_extended
++___statfs
+ ___syscall
+ ___syscall_logger
+ ___sysctl
+@@ -330,6 +337,7 @@
+ __mach_snprintf
+ __mach_vsnprintf
+ __os_alloc_once_table
++__os_xbs_chrooted
+ __register_gethostuuid_callback
+ __thread_set_tsd_base
+ _abort_with_payload
+@@ -999,7 +1007,6 @@
+ _posix_spawnattr_setcpumonitor_default
+ _posix_spawnattr_setexceptionports_np
+ _posix_spawnattr_setflags
+-_posix_spawnattr_setjetsam
+ _posix_spawnattr_setjetsam_ext
+ _posix_spawnattr_setmacpolicyinfo_np
+ _posix_spawnattr_setnosmt_np
+@@ -1014,16 +1021,17 @@
+ _pread$NOCANCEL
+ _preadv
+ _preadv$NOCANCEL
+-_proc_appstate
+-_proc_can_use_foreground_hw
+ _proc_clear_cpulimits
++_proc_clear_delayidlesleep
+ _proc_clear_dirty
++_proc_clear_vmpressure
+ _proc_denap_assertion_begin_with_msg
+ _proc_denap_assertion_complete
+-_proc_devstatusnotify
++_proc_disable_apptype
+ _proc_disable_cpumon
+ _proc_disable_wakemon
+ _proc_donate_importance_boost
++_proc_enable_apptype
+ _proc_get_cpumon_params
+ _proc_get_dirty
+ _proc_get_wakemon_params
+@@ -1041,7 +1049,6 @@
+ _proc_listpidspath
+ _proc_name
+ _proc_pid_rusage
+-_proc_pidbind
+ _proc_piddynkqueueinfo
+ _proc_pidfdinfo
+ _proc_pidfileportinfo
+@@ -1057,18 +1064,18 @@
+ _proc_set_cpumon_params
+ _proc_set_cpumon_params_fatal
+ _proc_set_csm
++_proc_set_delayidlesleep
+ _proc_set_dirty
+ _proc_set_no_smt
++_proc_set_owner_vmpressure
+ _proc_set_wakemon_defaults
+ _proc_set_wakemon_params
+-_proc_setappstate
+-_proc_setcpu_deadline
+ _proc_setcpu_percentage
+-_proc_setcpu_percentage_withdeadline
+ _proc_setpcontrol
+ _proc_setthread_cpupercent
+ _proc_setthread_csm
+ _proc_setthread_no_smt
++_proc_suppress
+ _proc_terminate
+ _proc_trace_log
+ _proc_track_dirty
+@@ -1104,6 +1111,7 @@
+ _pwrite$NOCANCEL
+ _pwritev
+ _pwritev$NOCANCEL
++_quota
+ _quotactl
+ _read
+ _read$NOCANCEL
+@@ -1181,6 +1189,7 @@
+ _setpgid
+ _setpriority
+ _setprivexec
++_setquota
+ _setregid
+ _setreuid
+ _setrlimit
+@@ -1235,6 +1244,7 @@
+ _system_get_sfi_window
+ _system_override
+ _system_set_sfi_window
++_system_version_compat_mode
+ _task_assign
+ _task_assign_default
+ _task_create

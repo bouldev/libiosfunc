@@ -36,6 +36,8 @@ static char sccsid[] = "@(#)fvwrite.c	8.1 (Berkeley) 6/4/93";
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/stdio/fvwrite.c,v 1.19 2009/11/25 04:21:42 wollman Exp $");
 
+#include <common.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -48,7 +50,7 @@ __FBSDID("$FreeBSD: src/lib/libc/stdio/fvwrite.c,v 1.19 2009/11/25 04:21:42 woll
  * This routine is large and unsightly, but most of the ugliness due
  * to the three different kinds of output buffering is handled here.
  */
-int
+AVOID_CONFLICT int
 __sfvwrite(fp, uio)
 	FILE *fp;
 	struct __suio *uio;

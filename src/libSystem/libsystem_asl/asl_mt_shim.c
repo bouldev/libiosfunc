@@ -20,11 +20,15 @@
  *
  * @APPLE_LICENSE_HEADER_END@
  */
-
+#ifdef PRIVATE
+#undef PRIVATE
+#include <common.h>
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #include <asl_msg.h>
 #include <os/lock_private.h>
 #include <xpc/private.h>
-#include <common.h>
+#endif
 
 #ifndef EPIPE
 #define EPIPE 1032
@@ -106,3 +110,4 @@ _asl_mt_shim_send_message(asl_msg_t *msg)
     if (reply) xpc_release(reply);
     xpc_release(xmsg);
 }
+#pragma clang diagnostic pop

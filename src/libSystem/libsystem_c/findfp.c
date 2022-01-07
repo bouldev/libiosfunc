@@ -39,6 +39,8 @@ static char sccsid[] = "@(#)findfp.c	8.2 (Berkeley) 1/4/94";
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/stdio/findfp.c,v 1.34 2009/12/05 19:31:38 ed Exp $");
 
+#include <common.h>
+
 #include <TargetConditionals.h>
 
 #include <sys/param.h>
@@ -57,7 +59,7 @@ __FBSDID("$FreeBSD: src/lib/libc/stdio/findfp.c,v 1.34 2009/12/05 19:31:38 ed Ex
 #include "local.h"
 #include "glue.h"
 
-pthread_once_t	__sdidinit;
+AVOID_CONFLICT pthread_once_t	__sdidinit;
 
 #define	__weak_reference(sym,alias)
 #define	__warn_references(sym,msg)
@@ -98,17 +100,17 @@ static struct __sFILEX __sFX[3] = {__sFXInit3, __sFXInit3, __sFXInit3};
  * This also means we cannot change the sizeof(FILE) and must continue to
  * use the __sFILEX stuff to add to FILE.
  */
-FILE __sF[3] = {
+AVOID_CONFLICT FILE __sF[3] = {
 	std(__SRD, STDIN_FILENO),
 	std(__SWR, STDOUT_FILENO),
 	std(__SWR|__SNBF, STDERR_FILENO)
 };
 
-FILE *__stdinp = &__sF[0];
-FILE *__stdoutp = &__sF[1];
-FILE *__stderrp = &__sF[2];
+AVOID_CONFLICT FILE *__stdinp = &__sF[0];
+AVOID_CONFLICT FILE *__stdoutp = &__sF[1];
+AVOID_CONFLICT FILE *__stderrp = &__sF[2];
 
-struct glue __sglue = { &uglue, 3, __sF };
+struct glue AVOID_CONFLICT __sglue = { &uglue, 3, __sF };
 static struct glue *lastglue = &uglue;
 
 static struct glue *	moreglue(int);
@@ -148,7 +150,7 @@ moreglue(int n)
 /*
  * Find a free FILE for fopen et al.
  */
-FILE *
+AVOID_CONFLICT FILE *
 __sfp(int count)
 {
 	FILE	*fp;
@@ -238,7 +240,7 @@ __sfprelease(FILE *fp)
 __warn_references(f_prealloc, 
 	"warning: this program uses f_prealloc(), which is not recommended.");
 
-void
+AVOID_CONFLICT void
 f_prealloc(void)
 {
 	struct glue *g;
@@ -267,7 +269,7 @@ f_prealloc(void)
  *
  * The name `_cleanup' is, alas, fairly well known outside stdio.
  */
-void
+AVOID_CONFLICT void
 _cleanup(void)
 {
 	/* (void) _fwalk(fclose); */
@@ -277,7 +279,7 @@ _cleanup(void)
 /*
  * __sinit() is called whenever stdio's internal variables must be set up.
  */
-void
+AVOID_CONFLICT void
 __sinit(void)
 {
 	int i;

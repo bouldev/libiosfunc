@@ -1,5 +1,3 @@
-___launchVersionNumber
-___launchVersionString
 __spawn_via_launchd
 __vproc_get_last_exit_status
 __vproc_grab_subset

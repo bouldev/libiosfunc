@@ -21,8 +21,9 @@ AC_CONFIG_FILES([
 AC_TYPE_SIZE_T
 AC_CHECK_TYPE([uintptr_t], [AC_DEFINE([HAVE_UINTPTR_T], [1], [Define to 1 if you have the `uintptr_t'])], [], [])
 AC_CHECK_TYPE([ptrdiff_t], [AC_DEFINE([HAVE_PTRDIFF_T], [1], [Define to 1 if you have the `ptrdiff_t'])], [], [])
-
-AC_CHECK_HEADERS([fcntl.h mach/mach.h stdint.h utmp.h os/base_private.h os/lock_private.h xpc/xpc.h xpc/private.h])
+AC_CHECK_TYPE([u_int64_t], [AC_DEFINE([HAVE_U_INT64_T], [1], [Define to 1 if you have the `u_int64_t'])], [], [])
+AC_CHECK_TYPE([uint64_t], [AC_DEFINE([HAVE_UINT64_T], [1], [Define to 1 if you have the `uint64_t`])], [], [])
+AC_CHECK_HEADERS([fcntl.h launch.h mach/mach.h stdint.h utmp.h os/base_private.h os/lock_private.h xpc/activity.h xpc/base.h xpc/connection.h xpc/debug.h xpc/endpoint.h xpc/xpc.h xpc/private.h])
 AC_TYPE_INT32_T
 AC_TYPE_INT64_T
 AC_TYPE_UINT8_T
@@ -30,6 +31,8 @@ AC_TYPE_UINT16_T
 AC_TYPE_UINT32_T
 AC_TYPE_UINT64_T
 AC_TYPE_UID_T
+AC_ARG_ENABLE([avoid_redef], [AS_HELP_STRING([--enable-conflicts], [Allow functions that already exists in iOS to be redefined in libiosfunc [default=no]])], [], [
+	AC_DEFINE([AVOID_SYMBOL_OVERWRITE], [1], [Define to 1 if you want to allow redefinitions])])
 AC_ARG_VAR([XCRUN], [Xcode CLT xcrun command])
 AC_ARG_VAR([SDKROOT], [Specify a sysroot if you want, default to XCRUN result or just "/"])
 dnl AC_ARG_WITH([ios-target], [AS_HELP_STRING([--with-ios-target], [Target iOS version, defalut to 12.0])], [AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [$withval])], [AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])])
@@ -88,7 +91,7 @@ else
 	AC_DEFINE([HAVE_LIBKERN_OSCACHECONTROL_H], [1], [Define to 1 if you have the <libkern/OSCacheControl.h> header file])
 	AC_DEFINE([HAVE_SYS_ICACHE_INVALIDATE], [1], [Define to 1 if you have the `sys_icache_invalidate' function])
 fi
-AC_CHECK_HEADERS([TargetConditionals.h sys/mman.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
+AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h syslog.h sys/mman.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
 if test "x$ac_cv_header_TargetConditionals_h" != xyes; then
 	AC_MSG_ERROR([<TargetConditionals.h> missing, please check your iOS SDK])
 elif test "x$ac_cv_header_sys_mman_h" != xyes; then
@@ -105,6 +108,12 @@ elif test "x$ac_cv_header_sys_socket_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <sys/socket.h>])
 elif test "x$ac_cv_header_sys_time_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <sys/time.h>])
+elif test "x$ac_cv_header_arpa_inet_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <arpa/inet.h>])
+elif test "x$ac_cv_header_netinet_in_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <netinet/in.h>])
+elif test "x$ac_cv_header_syslog_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <syslog.h>])
 fi
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])

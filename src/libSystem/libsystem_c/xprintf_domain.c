@@ -21,13 +21,15 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
+#include <common.h>
 #include <printf.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <errno.h>
 #include "xprintf_domain.h"
 #include "xprintf_private.h"
-
+#include <libc_private.h>
+#define LIBC_ABORT(f,...)       abort_report_np("%s:%s:%u: " f, __FILE__, __func__, __LINE__, ## __VA_ARGS__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wpointer-bool-conversion"
 
@@ -108,7 +110,7 @@ __xprintf_domain_init(void)
 #endif
 }
 
-printf_domain_t
+AVOID_CONFLICT printf_domain_t
 copy_printf_domain(printf_domain_t src)
 {
     printf_domain_t restrict copy;
@@ -127,7 +129,7 @@ copy_printf_domain(printf_domain_t src)
     return copy;
 }
 
-void
+AVOID_CONFLICT void
 free_printf_domain(printf_domain_t d)
 {
     if(!d) return;
@@ -135,7 +137,7 @@ free_printf_domain(printf_domain_t d)
     free(d);
 }
 
-printf_domain_t
+AVOID_CONFLICT printf_domain_t
 new_printf_domain(void)
 {
     printf_domain_t restrict d;
@@ -148,7 +150,7 @@ new_printf_domain(void)
     return d;
 }
 
-int
+AVOID_CONFLICT int
 register_printf_domain_function(printf_domain_t d, int spec, printf_function *render, printf_arginfo_function *arginfo, void *context)
 {
     xprintf_domain_init();
@@ -206,7 +208,7 @@ register_printf_domain_render(printf_domain_t d, int spec, printf_render *render
     return 0;
 }
 
-int
+AVOID_CONFLICT int
 register_printf_domain_render_std(printf_domain_t d, const char *specs)
 {
     int ret = 0;

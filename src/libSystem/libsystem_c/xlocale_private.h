@@ -24,6 +24,7 @@
 #ifndef _XLOCALE_PRIVATE_H_
 #define _XLOCALE_PRIVATE_H_
 
+#include <common.h>
 #include <sys/cdefs.h>
 #define __DARWIN_XLOCALE_PRIVATE
 #include <xlocale.h>

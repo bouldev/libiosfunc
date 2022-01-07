@@ -1,5 +1,11 @@
 /* src/include/config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Define to 1 if you want to allow redefinitions */
+#undef AVOID_SYMBOL_OVERWRITE
+
+/* Define to 1 if you have the <arpa/inet.h> header file. */
+#undef HAVE_ARPA_INET_H
+
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #undef HAVE_DLFCN_H
 
@@ -9,11 +15,17 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
+/* Define to 1 if you have the <launch.h> header file. */
+#undef HAVE_LAUNCH_H
+
 /* Define to 1 if you have the <libkern/OSCacheControl.h> header file */
 #undef HAVE_LIBKERN_OSCACHECONTROL_H
 
 /* Define to 1 if you have the <mach/mach.h> header file. */
 #undef HAVE_MACH_MACH_H
+
+/* Define to 1 if you have the <netinet/in.h> header file. */
+#undef HAVE_NETINET_IN_H
 
 /* Define to 1 if you have the <os/base_private.h> header file. */
 #undef HAVE_OS_BASE_PRIVATE_H
@@ -45,6 +57,9 @@
 /* Define to 1 if you have the `sysconf' function. */
 #undef HAVE_SYSCONF
 
+/* Define to 1 if you have the <syslog.h> header file. */
+#undef HAVE_SYSLOG_H
+
 /* Define to 1 if you have the `sys_icache_invalidate' function */
 #undef HAVE_SYS_ICACHE_INVALIDATE
 
@@ -69,6 +84,9 @@
 /* Define to 1 if you have the <TargetConditionals.h> header file. */
 #undef HAVE_TARGETCONDITIONALS_H
 
+/* Define to 1 if you have the `uint64_t` */
+#undef HAVE_UINT64_T
+
 /* Define to 1 if you have the `uintptr_t' */
 #undef HAVE_UINTPTR_T
 
@@ -80,6 +98,24 @@
 
 /* Define to 1 if you have the <utmp.h> header file. */
 #undef HAVE_UTMP_H
+
+/* Define to 1 if you have the `u_int64_t' */
+#undef HAVE_U_INT64_T
+
+/* Define to 1 if you have the <xpc/activity.h> header file. */
+#undef HAVE_XPC_ACTIVITY_H
+
+/* Define to 1 if you have the <xpc/base.h> header file. */
+#undef HAVE_XPC_BASE_H
+
+/* Define to 1 if you have the <xpc/connection.h> header file. */
+#undef HAVE_XPC_CONNECTION_H
+
+/* Define to 1 if you have the <xpc/debug.h> header file. */
+#undef HAVE_XPC_DEBUG_H
+
+/* Define to 1 if you have the <xpc/endpoint.h> header file. */
+#undef HAVE_XPC_ENDPOINT_H
 
 /* Define to 1 if you have the <xpc/private.h> header file. */
 #undef HAVE_XPC_PRIVATE_H

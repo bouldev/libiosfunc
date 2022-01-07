@@ -33,6 +33,8 @@ static char sccsid[] = "@(#)setenv.c	8.1 (Berkeley) 6/4/93";
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/stdlib/setenv.c,v 1.14 2007/05/01 16:02:41 ache Exp $");
 
+#include <common.h>
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
@@ -81,7 +83,7 @@ _legacy_crt1_environ(void)
 	if (_saved_environ) *_NSGetEnviron() = _saved_environ;
 	return 0;
 }
-int (*_cthread_init_routine)(void) = _legacy_crt1_environ;
+AVOID_CONFLICT int (*_cthread_init_routine)(void) = _legacy_crt1_environ;
 
 #  else /* !LEGACY_CRT1_ENVIRON */
 static int _do_nothing(void) { return 0; }
@@ -351,7 +353,7 @@ __unsetenv_locked(const char *name, char **environ, struct owned_ptr *owned)
 /*
  * _allocenvstate -- SPI that creates a new state (opaque)
  */
-void *
+AVOID_CONFLICT void *
 _allocenvstate(void)
 {
 	return _owned_ptr_alloc();
@@ -364,7 +366,7 @@ _allocenvstate(void)
  * is returned on error.  (This isn't needed anymore, as __setenv_locked will
  * automatically make a copy.)
  */
-char **
+AVOID_CONFLICT char **
 _copyenv(char **env)
 {
 	char **p;
@@ -387,7 +389,7 @@ _copyenv(char **env)
  * and all allocated strings, including the environment array itself if it
  * was copied.
  */
-int
+AVOID_CONFLICT int
 _deallocenvstate(void *state)
 {
 	struct owned_ptr *owned;
@@ -407,7 +409,7 @@ _deallocenvstate(void *state)
  *	Set the value of the environmental variable "name" to be
  *	"value".  If rewrite is set, replace any current value.
  */
-int
+AVOID_CONFLICT int
 _setenvp(const char *name, const char *value, int rewrite, char ***envp, void *state)
 {
 	__environ_lock();
@@ -427,7 +429,7 @@ _setenvp(const char *name, const char *value, int rewrite, char ***envp, void *s
  *
  *	Delete environmental variable "name".
  */
-int
+AVOID_CONFLICT int
 _unsetenvp(const char *name, char ***envp, void *state)
 {
 	__environ_lock();
@@ -447,7 +449,7 @@ _unsetenvp(const char *name, char ***envp, void *state)
  *	Set the value of the environmental variable "name" to be
  *	"value".  If rewrite is set, replace any current value.
  */
-int
+AVOID_CONFLICT int
 setenv(name, value, rewrite)
 	const char *name;
 	const char *value;
@@ -502,7 +504,7 @@ _unsetenv(const char *name, int should_set_errno)
  */
 #if __DARWIN_UNIX03
 int
-unsetenv(const char *name)
+AVOID_CONFLICT unsetenv(const char *name)
 {
 	/* no null ptr or empty str */
 	if(name == NULL || *name == 0) {
@@ -519,7 +521,7 @@ unsetenv(const char *name)
 }
 #else /* !__DARWIN_UNIX03 */
 void
-unsetenv(const char *name)
+AVOID_CONFLICT unsetenv(const char *name)
 {
 	/* no null ptr or empty str */
 	if(name == NULL || *name == 0)

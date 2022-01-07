@@ -32,7 +32,7 @@
  *	@(#)local.h	8.3 (Berkeley) 7/3/94
  * $FreeBSD: src/lib/libc/stdio/local.h,v 1.33 2008/05/05 16:03:52 jhb Exp $
  */
-
+#include <common.h>
 #include <sys/cdefs.h>
 #include "xlocale_private.h"
 #include "xprintf_private.h"

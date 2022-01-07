@@ -1,0 +1,44 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_sandbox.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_sandbox.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_sandbox.dylib.nm	2022-01-07 15:21:11.433078140 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_sandbox.dylib.nm	2022-01-07 15:21:35.628556020 +0800
+@@ -11,29 +11,39 @@
+ _SANDBOX_CHECK_NO_REPORT
+ _SANDBOX_EXTENSION_CANONICAL
+ _SANDBOX_EXTENSION_DEFAULT
++_SANDBOX_EXTENSION_MACL_LEARNING
+ _SANDBOX_EXTENSION_MAGIC
+ _SANDBOX_EXTENSION_NOFOLLOW
+ _SANDBOX_EXTENSION_NO_REPORT
+ _SANDBOX_EXTENSION_NO_STORAGE_CLASS
+ _SANDBOX_EXTENSION_PREFIXMATCH
+ _SANDBOX_EXTENSION_UNRESOLVED
++_SANDBOX_EXTENSION_USER_INTENT
+ __amkrtemp
+ __sandbox_in_a_container
++_gpu_bundle_find_trusted
++_gpu_bundle_is_path_trusted
+ _kSBXProfileNoInternet
+ _kSBXProfileNoNetwork
+ _kSBXProfileNoWrite
+ _kSBXProfileNoWriteExceptTemporary
+ _kSBXProfilePureComputation
+ _rootless_allows_task_for_pid
++_rootless_apply
++_rootless_apply_internal
++_rootless_apply_relative
+ _rootless_check_datavault_flag
+ _rootless_check_restricted_flag
+ _rootless_check_trusted
+ _rootless_check_trusted_class
+ _rootless_check_trusted_fd
+ _rootless_convert_to_datavault
++_rootless_manifest_free
++_rootless_manifest_parse
+ _rootless_mkdir_datavault
+ _rootless_mkdir_nounlink
+ _rootless_mkdir_restricted
++_rootless_preflight
+ _rootless_protected_volume
+ _rootless_register_trusted_storage_class
+ _rootless_restricted_environment
+Only in macosx11.2.3-symbols/usr/lib/system: libsystem_secinit.dylib.nm

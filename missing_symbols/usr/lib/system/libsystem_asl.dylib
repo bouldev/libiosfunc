@@ -1,0 +1,18 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_asl.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_asl.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_asl.dylib.nm	2022-01-07 15:21:11.492360207 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_asl.dylib.nm	2022-01-07 15:21:35.699305459 +0800
+@@ -4,6 +4,8 @@
+ __asl_lib_log
+ __asl_log_args_to_xpc
+ __asl_msg_dump
++__asl_mt_shim_fork_child
++__asl_mt_shim_send_message
+ __asl_server_cancel_direct_watch
+ __asl_server_control_query
+ __asl_server_create_aux_link
+@@ -213,4 +215,5 @@
+ _openlog
+ _setlogmask
+ _syslog
++_syslog$DARWIN_EXTSN
+ _vsyslog

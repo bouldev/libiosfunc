@@ -11,62 +11,75 @@ EXTRA_DIST = 	generate-changelog.sh \
 ACLOCAL_AMFLAGS = -I m4
 
 AM_CPPFLAGS = -I$(top_srcdir)/include \
-              -I$(top_srcdir)/src/include \
+	      -I$(top_srcdir)/src/include \
               -I$(top_srcdir)/src/libSystem/libsystem_asl
 
 include_HEADERS=src/include/libiosfunc.h
 
 lib_LTLIBRARIES = libiosfunc.la
-libiosfunc_la_CFLAGS = @CFLAGS@ -Wno-deprecated-declarations
-libiosfunc_la_LDFLAGS = -no-undefined -release 0.0.1 -Wl,-U,__BIG5_init \
-			-Wl,-U,__DefaultRuneXLocale \
-			-Wl,-U,__EUC_init \
-			-Wl,-U,__GB18030_init \
-			-Wl,-U,__GB2312_init \
-			-Wl,-U,__GBK_init \
-			-Wl,-U,__MSKanji_init \
-			-Wl,-U,__UTF2_init \
-			-Wl,-U,__UTF8_init \
-			-Wl,-U,___environ_lock \
-			-Wl,-U,___environ_unlock \
-			-Wl,-U,___findenv_locked \
-			-Wl,-U,___global_locale \
-			-Wl,-U,___locale_key \
-			-Wl,-U,___mbsnrtowcs_std \
-			-Wl,-U,___open_path_locale \
-			-Wl,-U,___printf_render_chr \
-			-Wl,-U,___printf_render_float \
-			-Wl,-U,___printf_render_int \
-			-Wl,-U,___printf_render_ptr \
-			-Wl,-U,___vfprintf \
-			-Wl,-U,___wcsnrtombs_std \
-			-Wl,-U,___xprintf_domain_init \
-			-Wl,-U,___xprintf_domain_once \
-			-Wl,-U,__ascii_init \
-			-Wl,-U,__none_init \
-			-Wl,-read_only_relocs,suppress
+libiosfunc_la_CFLAGS = @CFLAGS@ -DPRIVATE -D__APPLE_PR3417676_HACK__ -D__LIBC__
+libiosfunc_la_LDFLAGS = -no-undefined -release 0.0.1
 libiosfunc_la_SOURCES = src/include/common.h \
 			src/include/config.h.in \
 			src/include/xnu_headers \
 			src/libSystem \
 			src/libSystem/libcompiler_rt/clear_cache.c \
 			src/libSystem/libcompiler_rt/enable_execute_stack.c \
+			src/libSystem/libsystem_asl/asl.c \
+			src/libSystem/libsystem_asl/asl_fd.c \
+			src/libSystem/libsystem_asl/asl_msg.c \
 			src/libSystem/libsystem_asl/asl_mt_shim.c \
-			src/libSystem/libsystem_c/localeconv.c \
+			src/libSystem/libsystem_asl/asl_util.c \
+			src/libSystem/libsystem_asl/syslog.c \
+			src/libSystem/libsystem_c/ascii.c \
 			src/libSystem/libsystem_c/atexit.c \
-			src/libSystem/libsystem_c/runedepreciated.c \
-			src/libSystem/libsystem_c/utmpx-darwin.c \
-			src/libSystem/libsystem_c/utmpx.c \
-			src/libSystem/libsystem_c/setenv.c \
-			src/libSystem/libsystem_c/xprintf.c \
-			src/libSystem/libsystem_c/wordexp.c \
+			src/libSystem/libsystem_c/big5.c \
+			src/libSystem/libsystem_c/collate.c \
+			src/libSystem/libsystem_c/euc.c \
+			src/libSystem/libsystem_c/findfp.c \
+			src/libSystem/libsystem_c/fix_grouping.c \
 			src/libSystem/libsystem_c/frune.c \
+			src/libSystem/libsystem_c/fvwrite.c \
+			src/libSystem/libsystem_c/gb18030.c \
+			src/libSystem/libsystem_c/gb2312.c \
+			src/libSystem/libsystem_c/gbk.c \
+			src/libSystem/libsystem_c/getenv.c \
+			src/libSystem/libsystem_c/ldpart.c \
+			src/libSystem/libsystem_c/lmessages.c \
+			src/libSystem/libsystem_c/lmonetary.c \
+			src/libSystem/libsystem_c/lnumeric.c \
+			src/libSystem/libsystem_c/localeconv.c \
 			src/libSystem/libsystem_c/login.c \
 			src/libSystem/libsystem_c/logout.c \
 			src/libSystem/libsystem_c/mbrune.c \
+			src/libSystem/libsystem_c/mbsnrtowcs.c \
+			src/libSystem/libsystem_c/mskanji.c \
+			src/libSystem/libsystem_c/none.c \
+			src/libSystem/libsystem_c/printf-pos.c \
+			src/libSystem/libsystem_c/runedepreciated.c \
+			src/libSystem/libsystem_c/setenv.c \
 			src/libSystem/libsystem_c/setinvalidrune.c \
+			src/libSystem/libsystem_c/setlocale.c \
 			src/libSystem/libsystem_c/setrunelocale.c \
-			src/libSystem/libsystem_c/findfp.c
-
+			src/libSystem/libsystem_c/table.c \
+			src/libSystem/libsystem_c/timelocal.c \
+			src/libSystem/libsystem_c/utf2.c \
+			src/libSystem/libsystem_c/utf8.c \
+			src/libSystem/libsystem_c/utmpx-darwin.c \
+			src/libSystem/libsystem_c/utmpx.c \
+			src/libSystem/libsystem_c/vfprintf.c \
+			src/libSystem/libsystem_c/wcsnrtombs.c \
+			src/libSystem/libsystem_c/wordexp.c \
+			src/libSystem/libsystem_c/xlocale.c \
+			src/libSystem/libsystem_c/xprintf.c \
+			src/libSystem/libsystem_c/xprintf_domain.c \
+			src/libSystem/libsystem_c/xprintf_errno.c \
+			src/libSystem/libsystem_c/xprintf_float.c \
+			src/libSystem/libsystem_c/xprintf_hexdump.c \
+			src/libSystem/libsystem_c/xprintf_int.c \
+			src/libSystem/libsystem_c/xprintf_quote.c \
+			src/libSystem/libsystem_c/xprintf_str.c \
+			src/libSystem/libsystem_c/xprintf_time.c \
+			src/libSystem/libsystem_c/xprintf_vis.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc

@@ -1,0 +1,11 @@
+diff -ur ios14.2-symbols/usr/lib/system/libsystem_pthread.dylib.nm macosx11.2.3-symbols/usr/lib/system/libsystem_pthread.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libsystem_pthread.dylib.nm	2022-01-07 15:21:11.137343305 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libsystem_pthread.dylib.nm	2022-01-07 15:21:35.301444360 +0800
+@@ -16,6 +16,7 @@
+ __pthread_fork_parent
+ __pthread_fork_prepare
+ __pthread_is_threaded
++__pthread_mutex_enable_legacy_mode
+ __pthread_override_qos_class_end_direct
+ __pthread_override_qos_class_start_direct
+ __pthread_qos_class_decode

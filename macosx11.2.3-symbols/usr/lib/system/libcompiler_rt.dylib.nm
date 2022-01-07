@@ -41,7 +41,6 @@ ___atomic_store_8
 ___chkstk_darwin
 ___clear_cache
 ___clzti2
-___compilerrt_abort_impl
 ___divti3
 ___enable_execute_stack
 ___extendhfsf2
@@ -72,5 +71,3 @@ _atomic_flag_test_and_set
 _atomic_flag_test_and_set_explicit
 _atomic_signal_fence
 _atomic_thread_fence
-_locks
-_readEncodedPointer

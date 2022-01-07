@@ -1,4 +1,3 @@
-_ArchInfoTable
 _NXCombineCpuSubtypes
 _NXFindBestFatArch
 _NXFindBestFatArch_64
@@ -22,7 +21,6 @@ _getsectdatafromheader_64
 _getsectiondata
 _getsegbyname
 _getsegmentdata
-_internal_NXFindBestFatArch
 _slot_name
 _swap_build_tool_version
 _swap_build_version_command

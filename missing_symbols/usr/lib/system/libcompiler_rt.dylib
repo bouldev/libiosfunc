@@ -1,0 +1,14 @@
+diff -ur ios14.2-symbols/usr/lib/system/libcompiler_rt.dylib.nm macosx11.2.3-symbols/usr/lib/system/libcompiler_rt.dylib.nm
+--- ios14.2-symbols/usr/lib/system/libcompiler_rt.dylib.nm	2022-01-07 15:21:11.461284882 +0800
++++ macosx11.2.3-symbols/usr/lib/system/libcompiler_rt.dylib.nm	2022-01-07 15:21:35.653540680 +0800
+@@ -39,8 +39,10 @@
+ ___atomic_store_4
+ ___atomic_store_8
+ ___chkstk_darwin
++___clear_cache
+ ___clzti2
+ ___divti3
++___enable_execute_stack
+ ___extendhfsf2
+ ___fixdfti
+ ___fixsfti

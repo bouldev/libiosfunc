@@ -55,7 +55,7 @@ static char numempty[] = { CHAR_MAX, '\0' };
 /*
  * Default (C) locale conversion.
  */
-struct lconv _C_lconv = {
+static struct lconv _C_lconv = {
 	".",			/* decimal_point */
 	empty,			/* thousands_sep */
 	numempty,		/* grouping */

@@ -124,7 +124,7 @@ _pwuid_r(uid_t uid, struct passwd *pw)
 }
 
 struct lastlogx *
-getlastlogx(uid_t uid, struct lastlogx *lx)
+AVOID_CONFLICT getlastlogx(uid_t uid, struct lastlogx *lx)
 {
 	char *buf;
 	struct passwd pw;
@@ -139,7 +139,7 @@ getlastlogx(uid_t uid, struct lastlogx *lx)
 }
 
 struct lastlogx *
-getlastlogxbyname(const char *user, struct lastlogx *lx)
+AVOID_CONFLICT getlastlogxbyname(const char *user, struct lastlogx *lx)
 {
 	asl_object_t m, query, res;
 	size_t cmax;
@@ -503,26 +503,26 @@ static struct {
 	int left;
 } wtmp_file = {-1, -1};
 
-void
+AVOID_CONFLICT void
 endutxent_wtmp(void)
 {
 	wtmp_func.end();
 }
 
 struct utmpx *
-getutxent_wtmp(void)
+AVOID_CONFLICT getutxent_wtmp(void)
 {
 	return wtmp_func.get();
 }
 
-void
+AVOID_CONFLICT void
 setutxent_wtmp(int dir)
 {
 	wtmp_func.set(dir);
 }
 
 /* use the given file, or if NULL, read from asl */
-int
+AVOID_CONFLICT int
 wtmpxname(const char *fname)
 {
 	size_t len;
@@ -1153,7 +1153,7 @@ _write_wtmp(const struct utmp *u)
 /*
  * thread aware SPI
  */
-utmpx_t
+AVOID_CONFLICT utmpx_t
 _openutx(const char *name)
 {
 	struct _utmpx *U;
