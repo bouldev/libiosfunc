@@ -14,7 +14,12 @@ AM_CPPFLAGS = -I$(top_srcdir)/include \
 	      -I$(top_srcdir)/src/include \
               -I$(top_srcdir)/src/libSystem/libsystem_asl
 
-include_HEADERS=src/include/libiosfunc.h
+include_HEADERS = src/include/libiosfunc.h
+EXTRA_HEADERS = src/include/extra-headers/rune.h \
+		src/include/extra-headers/util.h \
+		src/include/extra-headers/utmp.h \
+		src/include/extra-headers/utmpx.h \
+		src/include/extra-headers/wordexp.h
 
 lib_LTLIBRARIES = libiosfunc.la
 libiosfunc_la_CFLAGS = @CFLAGS@ -DPRIVATE -D__APPLE_PR3417676_HACK__ -D__LIBC__
@@ -83,3 +88,25 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_c/xprintf_vis.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
+
+install-extra-headers: $(EXTRA_HEADERS)
+	@$(NORMAL_INSTALL)
+	@list='$(EXTRA_HEADERS)'; test -n "$(includedir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(includedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(includedir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(includedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(includedir)" || exit $$?; \
+	done
+
+uninstall-extra-headers:
+	@$(NORMAL_UNINSTALL)
+	@list='$(EXTRA_HEADERS)'; test -n "$(includedir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(includedir)'; $(am__uninstall_files_from_dir)

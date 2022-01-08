@@ -29,10 +29,9 @@ typedef u_int64_t uint64_t;
 #endif
 
 extern int os_log_shim_enabled(void *addr);
-/* As we are directally using libc source instead of reimplementing missing functions,
+/* As we are directally using original sources instead of reimplementing missing functions,
  * redefinitions of some functions were not quite avoidable. So just give an option to
- * control the visibility of those redefined functions.
- */
+ * control the visibility of those redefined functions. */
 #ifdef AVOID_SYMBOL_OVERWRITE
 #define AVOID_CONFLICT __attribute__((visibility("hidden")))
 #else

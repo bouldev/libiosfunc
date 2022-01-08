@@ -39,7 +39,9 @@ dnl AC_ARG_WITH([ios-target], [AS_HELP_STRING([--with-ios-target], [Target iOS v
 AC_ARG_VAR([IPHONEOS_DEPLOYMENT_TARGET], [Target iOS version, defalut to 12.0])
 AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])
 if test "x$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_set" = xset; then
-	AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_value])
+	AX_COMPARE_VERSION([$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_value], [ge], [12.0], [
+		AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [$ac_cv_env_IPHONEOS_DEPLOYMENT_TARGET_value])], [
+		AC_MSG_ERROR([libiosexec have not yet tested on iOS 11 or lower, cannot proceed])])
 else
 	AC_SUBST([IPHONEOS_DEPLOYMENT_TARGET], [12.0])
 fi
@@ -91,7 +93,7 @@ else
 	AC_DEFINE([HAVE_LIBKERN_OSCACHECONTROL_H], [1], [Define to 1 if you have the <libkern/OSCacheControl.h> header file])
 	AC_DEFINE([HAVE_SYS_ICACHE_INVALIDATE], [1], [Define to 1 if you have the `sys_icache_invalidate' function])
 fi
-AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h syslog.h sys/mman.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
+AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h syslog.h termios.h sys/mman.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
 if test "x$ac_cv_header_TargetConditionals_h" != xyes; then
 	AC_MSG_ERROR([<TargetConditionals.h> missing, please check your iOS SDK])
 elif test "x$ac_cv_header_sys_mman_h" != xyes; then
@@ -114,6 +116,8 @@ elif test "x$ac_cv_header_netinet_in_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <netinet/in.h>])
 elif test "x$ac_cv_header_syslog_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <syslog.h>])
+elif test "x$ac_cv_header_termios_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <termios.h>])
 fi
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])
