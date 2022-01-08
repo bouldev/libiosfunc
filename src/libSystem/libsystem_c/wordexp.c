@@ -24,6 +24,7 @@
  * SUCH DAMAGE.
  */
 
+#include <common.h>
 #include <TargetConditionals.h>
 
 #include "namespace.h"
@@ -40,10 +41,6 @@
 #include <unistd.h>
 #include <wordexp.h>
 
-#define _read read
-#define _sigprocmask sigprocmask
-#define _close close
-#define _waitpid waitpid
 #ifdef __APPLE__
 // For _NSGetEnviron() -- which gives us a pointer to environ
 #include <crt_externs.h>

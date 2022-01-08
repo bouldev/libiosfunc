@@ -28,8 +28,6 @@
 #include <string.h>
 #include "ldpart.h"
 #include <sys/cdefs.h>
-#define __LIBC_PTHREAD_KEY(x)           (10 + (x))
-#define __LIBC_PTHREAD_KEY_XLOCALE      __LIBC_PTHREAD_KEY(0)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 

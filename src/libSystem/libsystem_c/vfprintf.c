@@ -71,18 +71,6 @@ __FBSDID("$FreeBSD: src/lib/libc/stdio/vfprintf.c,v 1.90 2009/02/28 06:06:57 das
 
 #include <stdarg.h>
 
-typedef struct os_log_pack_s {
-    uint64_t        olp_continuous_time;
-    struct timespec olp_wall_time;
-    const void     *olp_mh;
-    const void     *olp_pc;
-    const char     *olp_format;
-    uint8_t         olp_data[0];
-} os_log_pack_s, *os_log_pack_t;
-#define os_log_pack_size(fmt, ...) _os_log_pack_size(sizeof(fmt))
-#define os_log_pack_fill(pack, size, errno, fmt, ...) _os_log_pack_fill(pack, size, errno, NULL, fmt)
-extern size_t _os_log_pack_size(size_t os_log_format_buffer_size);
-extern uint8_t *_os_log_pack_fill(os_log_pack_t pack, size_t size, int saved_errno, const void *dso, const char *fmt);
 #include <os/assumes.h>
 #include <mach-o/dyld_priv.h>
 #include <mach/vm_region.h>
@@ -91,12 +79,6 @@ extern uint8_t *_os_log_pack_fill(os_log_pack_t pack, size_t size, int saved_err
 #include "local.h"
 #include "fvwrite.h"
 #include "printflocal.h"
-#define _FLOCKFILE(x) _flockfile(x)
-#define FLOCKFILE(fp) _FLOCKFILE(fp)
-#define FUNLOCKFILE(fp) _funlockfile(fp)
-#define _flockfile flockfile
-#define _funlockfile funlockfile
-#define LIBC_ABORT(f,...)       abort_report_np("%s:%s:%u: " f, __FILE__, __func__, __LINE__, ## __VA_ARGS__)
 static int	__sprint(FILE *, locale_t, struct __suio *);
 #if 0
 static int	__sbprintf(FILE *, locale_t, const char *, va_list) __printflike(3, 0);

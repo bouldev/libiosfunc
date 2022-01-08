@@ -69,10 +69,6 @@ __FBSDID("$FreeBSD: src/lib/libc/stdlib/atexit.c,v 1.8 2007/01/09 00:28:09 imp E
 #define	ATEXIT_FN_BLK	3
 #endif /* __BLOCKS__ */
 
-#define __isthreaded 1
-#define	_pthread_mutex_lock pthread_mutex_lock
-#define _pthread_mutex_unlock pthread_mutex_unlock
-
 static pthread_mutex_t atexit_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 #define _MUTEX_LOCK(x)		if (__isthreaded) _pthread_mutex_lock(x)

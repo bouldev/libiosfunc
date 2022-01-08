@@ -39,8 +39,6 @@ static char sccsid[] = "@(#)findfp.c	8.2 (Berkeley) 1/4/94";
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/stdio/findfp.c,v 1.34 2009/12/05 19:31:38 ed Exp $");
 
-#include <common.h>
-
 #include <TargetConditionals.h>
 
 #include <sys/param.h>
@@ -59,10 +57,11 @@ __FBSDID("$FreeBSD: src/lib/libc/stdio/findfp.c,v 1.34 2009/12/05 19:31:38 ed Ex
 #include "local.h"
 #include "glue.h"
 
+#include <common.h>
+#undef _read
+#undef _write
+#undef _close
 AVOID_CONFLICT pthread_once_t	__sdidinit;
-
-#define	__weak_reference(sym,alias)
-#define	__warn_references(sym,msg)
 
 #if !TARGET_OS_IPHONE
 #define	NDYNAMIC 10		/* add ten more whenever necessary */

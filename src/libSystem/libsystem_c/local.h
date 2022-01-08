@@ -41,7 +41,6 @@
 #include <limits.h>
 #include <string.h>
 #include <wchar.h>
-#define	__va_list __darwin_va_list
 /*
  * Information local to this implementation of stdio,
  * in particular, macros and private variables.
