@@ -40,6 +40,8 @@ typedef u_int64_t uint64_t;
 #define MACHTIME 1
 #define XPRINTF_PERF 1
 #define UNIFDEF_LEGACY_UTMP_APIS 1
+#define DS_AVAILABLE 1
+
 typedef struct os_log_pack_s {
     uint64_t        olp_continuous_time;
     struct timespec olp_wall_time;
@@ -57,6 +59,7 @@ extern int _xpc_pipe_s;
 extern void xpc_pipe_invalidate(xpc_pipe_t pipe);
 extern xpc_pipe_t xpc_pipe_create(const char *name, uint64_t flags);
 extern int xpc_pipe_routine(xpc_pipe_t pipe, xpc_object_t request, xpc_object_t* reply);
+extern void xpc_dictionary_get_audit_token(xpc_object_t xdict, audit_token_t *token);
 extern size_t _os_log_pack_size(size_t os_log_format_buffer_size);
 extern uint8_t *_os_log_pack_fill(os_log_pack_t pack, size_t size, int saved_errno, const void *dso, const char *fmt);
 extern int os_log_shim_enabled(void *addr);
