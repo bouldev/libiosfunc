@@ -79,6 +79,11 @@ __END_DECLS
 #include <utmp.h>
 
 #endif /* !_UTIL_H_ */
+
+/*	--- 	libsystem_info	---	*/
+int _ds_running(void);
+void _si_disable_opendirectory(void);
+
 #  endif
 #endif
 #ifdef LIBIOSFUNC_INTERNAL
@@ -106,6 +111,8 @@ __END_DECLS
 #      define getutmpx iosfunc_getutmpx
 #      define wordexp iosfunc_wordexp
 #      define wordfree iosfunc_wordfree
+#      define _ds_running iosfunc__ds_running
+#      define _si_disable_opendirectory iosfunc__si_disable_opendirectory
 #    endif // LIBIOSFUNC_INTERNAL
 #  endif // TARGET_OS_EMBEDDED
 #endif // __APPLE__
