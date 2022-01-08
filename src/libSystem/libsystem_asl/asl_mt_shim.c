@@ -20,26 +20,16 @@
  *
  * @APPLE_LICENSE_HEADER_END@
  */
-#ifdef PRIVATE
-#undef PRIVATE
 #include <common.h>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #include <asl_msg.h>
 #include <os/lock_private.h>
 #include <xpc/private.h>
-#endif
 
 #ifndef EPIPE
 #define EPIPE 1032
 #endif
-
-extern int _xpc_pipe_s;
-typedef struct _xpc_pipe_s* xpc_pipe_t;
-extern void xpc_pipe_invalidate(xpc_pipe_t pipe);
-extern xpc_pipe_t xpc_pipe_create(const char *name, uint64_t flags);
-extern int xpc_pipe_routine(xpc_pipe_t pipe, xpc_object_t request, xpc_object_t* reply);
-
 
 #define MT_SHIM_SERVICE_NAME "com.apple.analyticsd.messagetracer"
 

@@ -27,12 +27,13 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#define __APPLE_PR3417676_HACK__ 1
 #if defined(LIBC_SCCS) && !defined(lint)
 static char sccsid[] = "@(#)localeconv.c	8.1 (Berkeley) 6/4/93";
 #endif /* LIBC_SCCS and not lint */
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: src/lib/libc/locale/localeconv.c,v 1.14 2007/12/12 07:43:23 phantom Exp $");
+
+#include <common.h>
 
 #include "xlocale_private.h"
 

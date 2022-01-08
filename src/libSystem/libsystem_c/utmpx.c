@@ -29,10 +29,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 #include <sys/cdefs.h>
-#define UNIFDEF_LEGACY_UTMP_APIS 1
 #if defined(LIBC_SCCS) && !defined(lint)
 __RCSID("$NetBSD: utmpx.c,v 1.25 2008/04/28 20:22:59 martin Exp $");
 #endif /* LIBC_SCCS and not lint */
+
+#include <common.h>
 
 #include "namespace.h"
 #include <sys/types.h>
@@ -56,7 +57,6 @@ __RCSID("$NetBSD: utmpx.c,v 1.25 2008/04/28 20:22:59 martin Exp $");
 #include <vis.h>
 #include <notify.h>
 #include <libc_private.h>
-#define LIBC_ABORT(f,...)	abort_report_np("%s:%s:%u: " f, __FILE__, __func__, __LINE__, ## __VA_ARGS__)
 static struct _utmpx *__utx__ = NULL;
 
 static void

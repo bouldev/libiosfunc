@@ -22,7 +22,7 @@ EXTRA_HEADERS = src/include/extra-headers/rune.h \
 		src/include/extra-headers/wordexp.h
 
 lib_LTLIBRARIES = libiosfunc.la
-libiosfunc_la_CFLAGS = @CFLAGS@ -DPRIVATE -D__APPLE_PR3417676_HACK__ -D__LIBC__
+libiosfunc_la_CFLAGS = @CFLAGS@
 libiosfunc_la_LDFLAGS = -no-undefined -release 0.0.1
 libiosfunc_la_SOURCES = src/include/common.h \
 			src/include/config.h.in \
@@ -85,7 +85,8 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_c/xprintf_quote.c \
 			src/libSystem/libsystem_c/xprintf_str.c \
 			src/libSystem/libsystem_c/xprintf_time.c \
-			src/libSystem/libsystem_c/xprintf_vis.c
+			src/libSystem/libsystem_c/xprintf_vis.c \
+			src/libSystem/libsystem_darwin/variant.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
 

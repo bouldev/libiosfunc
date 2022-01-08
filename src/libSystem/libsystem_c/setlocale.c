@@ -61,7 +61,6 @@ __FBSDID("$FreeBSD: src/lib/libc/locale/setlocale.c,v 1.51 2007/01/09 00:28:00 i
 #include "ldpart.h"
 #include "timelocal.h" /* for __time_load_locale() */
 
-#define _open open
 /*
  * Category names for getenv()
  */

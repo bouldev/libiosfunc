@@ -32,11 +32,11 @@
  *
  * $FreeBSD: src/lib/libc/stdio/xprintf.c,v 1.9 2010/03/11 17:03:32 jhb Exp $
  */
-#define MACHTIME 1
-#define XPRINTF_PERF 1
-#define	__va_list __darwin_va_list
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+#include <common.h>
+
 #include "namespace.h"
 #include <err.h>
 #include <sys/types.h>
@@ -64,7 +64,7 @@
 #include "xprintf_private.h"
 #include "xprintf_domain.h"
 #include "fvwrite.h"
-
+#undef _write
 /*
  * Defining XPRINTF_DEBUG allows the __private_extern__ variable __use_xprintf
  * to be set so that regular printf variants will use the extensible printf

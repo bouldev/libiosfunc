@@ -43,9 +43,6 @@ __FBSDID("$FreeBSD: src/lib/libc/locale/ldpart.c,v 1.15 2004/04/25 19:56:50 ache
 #include "ldpart.h"
 #include "setlocale.h"
 
-#define _fstat fstat
-#define _read read
-#define _close close
 static int split_lines(char *, const char *);
 
 __private_extern__ int

@@ -84,6 +84,9 @@
 /* Define to 1 if you have the <TargetConditionals.h> header file. */
 #undef HAVE_TARGETCONDITIONALS_H
 
+/* Define to 1 if you have the <termios.h> header file. */
+#undef HAVE_TERMIOS_H
+
 /* Define to 1 if you have the `uint64_t` */
 #undef HAVE_UINT64_T
 

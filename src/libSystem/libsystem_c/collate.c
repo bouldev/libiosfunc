@@ -59,9 +59,6 @@ __FBSDID("$FreeBSD: src/lib/libc/locale/collate.c,v 1.35 2005/02/27 20:31:13 ru 
 
 #include "libc_private.h"
 
-#define _getprogname getprogname
-#define _write write
-
 #if __DARWIN_BYTE_ORDER == __DARWIN_LITTLE_ENDIAN
 static void wntohl(wchar_t *, int);
 #endif /* __DARWIN_BYTE_ORDER == __DARWIN_LITTLE_ENDIAN */
