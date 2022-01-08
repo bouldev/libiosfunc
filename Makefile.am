@@ -86,7 +86,8 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_c/xprintf_str.c \
 			src/libSystem/libsystem_c/xprintf_time.c \
 			src/libSystem/libsystem_c/xprintf_vis.c \
-			src/libSystem/libsystem_darwin/variant.c
+			src/libSystem/libsystem_darwin/variant.c \
+			src/libSystem/libsystem_info/stub.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
 
