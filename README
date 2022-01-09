@@ -17,6 +17,7 @@
  LLVM: https://github.com/llvm/llvm-project
  Libc: https://opensource.apple.com/source/Libc/Libc-1439.141.1
  Libinfo: https://opensource.apple.com/source/Libinfo/Libinfo-542.40.3
+ libplatform: https://opensource.apple.com/source/libplatform/libplatform-254.80.2
  Syslog: https://opensource.apple.com/source/syslog/syslog-385
  XNU: https://opensource.apple.com/source/xnu/xnu-7195.141.2
  
