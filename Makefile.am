@@ -96,7 +96,8 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_platform/OSAtomic.c \
 			src/libSystem/libsystem_platform/_ctx_done.c \
 			src/libSystem/libsystem_platform/init.c \
-			src/libSystem/libsystem_pthread/_pthread_mutex_enable_legacy_mode.c
+			src/libSystem/libsystem_pthread/_pthread_mutex_enable_legacy_mode.c \
+			src/libSystem/libsystem_trace/_os_trace_basesystem_storage_available.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
 
