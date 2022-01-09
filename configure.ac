@@ -93,7 +93,7 @@ else
 	AC_DEFINE([HAVE_LIBKERN_OSCACHECONTROL_H], [1], [Define to 1 if you have the <libkern/OSCacheControl.h> header file])
 	AC_DEFINE([HAVE_SYS_ICACHE_INVALIDATE], [1], [Define to 1 if you have the `sys_icache_invalidate' function])
 fi
-AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h syslog.h termios.h sys/mman.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
+AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h strings.h syslog.h termios.h sys/mman.h sys/mount.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
 if test "x$ac_cv_header_TargetConditionals_h" != xyes; then
 	AC_MSG_ERROR([<TargetConditionals.h> missing, please check your iOS SDK])
 elif test "x$ac_cv_header_sys_mman_h" != xyes; then
@@ -118,6 +118,10 @@ elif test "x$ac_cv_header_syslog_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <syslog.h>])
 elif test "x$ac_cv_header_termios_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <termios.h>])
+elif test "x$ac_cv_header_strings_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <strings.h>])
+elif test "x$ac_cv_header_sys_mount_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <sys/mount.h>])
 fi
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])

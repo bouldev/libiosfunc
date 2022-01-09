@@ -74,17 +74,33 @@ IOSFUNC_PUBLIC int     ttyaction(char *tty, char *act, char *user);
 struct iovec;
 IOSFUNC_PUBLIC char   *ttymsg(struct iovec *, int, const char *, int);
 __END_DECLS
-
 /* Include utmp.h last to avoid deprecation warning above */
-#include <utmp.h>
-
-#endif /* !_UTIL_H_ */
-
+#    include <utmp.h>
+#    endif /* !_UTIL_H_ */
+#  endif
 /*	--- 	libsystem_info	---	*/
 int _ds_running(void);
 void _si_disable_opendirectory(void);
 
-#  endif
+/*	---	libsystem_kernel	---	*/
+IOSFUNC_PUBLIC int __fstat(int fd, struct stat *buf);
+IOSFUNC_PUBLIC int __fstatat(int fd, const char *path, struct stat *buf, int flag);
+IOSFUNC_PUBLIC int __fstatfs(int fd, struct statfs *buf);
+IOSFUNC_PUBLIC int __getfsstat(struct statfs *buf, int bufsize, int flags);
+IOSFUNC_PUBLIC int __lstat(const char *restrict path, struct stat *restrict buf);
+IOSFUNC_PUBLIC int __stat(const char *restrict path, struct stat *restrict buf);
+IOSFUNC_PUBLIC int __statfs(const char *path, struct statfs *buf);
+IOSFUNC_PUBLIC bool _os_xbs_chrooted;
+IOSFUNC_PUBLIC int proc_clear_vmpressure(pid_t pid);
+IOSFUNC_PUBLIC int proc_set_owner_vmpressure(void);
+IOSFUNC_PUBLIC int proc_set_delayidlesleep(void);
+IOSFUNC_PUBLIC int proc_clear_delayidlesleep(void);
+IOSFUNC_PUBLIC int proc_disable_apptype(pid_t pid, int apptype);
+IOSFUNC_PUBLIC int proc_enable_apptype(pid_t pid, int apptype);
+IOSFUNC_PUBLIC int proc_suppress(__unused pid_t pid, __unused uint64_t *generation);
+IOSFUNC_PUBLIC int quota(void);
+IOSFUNC_PUBLIC int setquota(void);
+
 #endif
 #ifdef LIBIOSFUNC_INTERNAL
 //IOSFUNC_HIDDEN void free_new_argv(char** argv);
@@ -113,6 +129,24 @@ void _si_disable_opendirectory(void);
 #      define wordfree iosfunc_wordfree
 #      define _ds_running iosfunc__ds_running
 #      define _si_disable_opendirectory iosfunc__si_disable_opendirectory
+#      define __fstat iosfunc___fstat
+#      define __fstatat iosfunc___fstatat
+#      define __fstatfs iosfunc___fstatfs
+#      define __getfsstat iosfunc___getfsstat
+#      define __lstat iosfunc___lstat
+#      define __stat iosfunc___stat
+#      define __statfs iosfunc___statfs
+#      define _os_xbs_chrooted iosfunc__os_xbs_chrooted
+#      define proc_clear_vmpressure iosfunc_proc_clear_vmpressure
+#      define proc_set_owner_vmpressure iosfunc_proc_set_owner_vmpressure
+#      define proc_set_delayidlesleep iosfunc_proc_set_delayidlesleep
+#      define proc_clear_delayidlesleep iosfunc_proc_clear_delayidlesleep
+#      define proc_disable_apptype iosfunc_proc_disable_apptype
+#      define proc_enable_apptype iosfunc_proc_enable_apptype
+#      define proc_suppress iosfunc_proc_suppress
+#      define quota iosfunc_quota
+#      define setquota iosfunc_setquota
+#      define system_version_compat_mode iosfunc_system_version_compat_mode
 #    endif // LIBIOSFUNC_INTERNAL
 #  endif // TARGET_OS_EMBEDDED
 #endif // __APPLE__
