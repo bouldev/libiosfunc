@@ -101,6 +101,14 @@ IOSFUNC_PUBLIC int proc_suppress(__unused pid_t pid, __unused uint64_t *generati
 IOSFUNC_PUBLIC int quota(void);
 IOSFUNC_PUBLIC int setquota(void);
 
+/*	---	libsystem_platform	---	*/
+IOSFUNC_PUBLIC void OSAtomicFifoEnqueue(OSFifoQueueHead *__list, void *__new, size_t __offset);
+IOSFUNC_PUBLIC void *OSAtomicFifoDequeue(OSFifoQueueHead *__list, size_t __offset);
+IOSFUNC_PUBLIC void _ctx_done(ucontext_t *uctx);
+
+/*	---	libsystem_pthread	---	*/
+IOSFUNC_PUBLIC void _pthread_mutex_enable_legacy_mode(void);
+
 #endif
 #ifdef LIBIOSFUNC_INTERNAL
 //IOSFUNC_HIDDEN void free_new_argv(char** argv);
@@ -147,6 +155,10 @@ IOSFUNC_PUBLIC int setquota(void);
 #      define quota iosfunc_quota
 #      define setquota iosfunc_setquota
 #      define system_version_compat_mode iosfunc_system_version_compat_mode
+#      define OSAtomicFifoEnqueue iosfunc_OSAtomicFifoEnqueue
+#      define OSAtomicFifoDequeue iosfunc_OSAtomicFifoDequeue
+#      define _ctx_done iosfunc__ctx_done
+#      define _pthread_mutex_enable_legacy_mode iosfunc__pthread_mutex_enable_legacy_mode
 #    endif // LIBIOSFUNC_INTERNAL
 #  endif // TARGET_OS_EMBEDDED
 #endif // __APPLE__
