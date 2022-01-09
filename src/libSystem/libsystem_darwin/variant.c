@@ -33,13 +33,13 @@
 #include <sys/csr.h>
 #include <machine/cpu_capabilities.h>
 
-static bool _os_xbs_chrooted = 0;
 #include <os/assumes.h>
 #include <os/bsd.h>
 #include <os/stdlib.h>
 #include <os/variant_private.h>
 #include <os/boot_mode_private.h>
 
+extern bool _os_xbs_chrooted;
 /*
  * Lists all properties overridden by an empty file
  */
