@@ -87,7 +87,12 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_c/xprintf_time.c \
 			src/libSystem/libsystem_c/xprintf_vis.c \
 			src/libSystem/libsystem_darwin/variant.c \
-			src/libSystem/libsystem_info/stub.c
+			src/libSystem/libsystem_info/stub.c \
+			src/libSystem/libsystem_kernel/libproc.c \
+			src/libSystem/libsystem_kernel/os_xbs_chrooted.c \
+			src/libSystem/libsystem_kernel/quota_obsolete.c \
+			src/libSystem/libsystem_kernel/stat.c \
+			src/libSystem/libsystem_kernel/system-version-compat-support.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
 
