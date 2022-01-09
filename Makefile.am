@@ -92,7 +92,10 @@ libiosfunc_la_SOURCES = src/include/common.h \
 			src/libSystem/libsystem_kernel/os_xbs_chrooted.c \
 			src/libSystem/libsystem_kernel/quota_obsolete.c \
 			src/libSystem/libsystem_kernel/stat.c \
-			src/libSystem/libsystem_kernel/system-version-compat-support.c
+			src/libSystem/libsystem_kernel/system-version-compat-support.c \
+			src/libSystem/libsystem_platform/OSAtomic.c \
+			src/libSystem/libsystem_platform/_ctx_done.c \
+			src/libSystem/libsystem_platform/init.c
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
 
