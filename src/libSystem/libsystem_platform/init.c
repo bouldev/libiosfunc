@@ -35,7 +35,7 @@
 __attribute__((visibility("hidden")))
 void *COMMPAGE_PFZ_BASE_PTR commpage_pfz_base = 0;
 
-__attribute__((visibility("default")))
+__attribute__((visibility("hidden")))
 void __pfz_setup(const char *apple[])
 {
     const char *p = _simple_getenv(apple, "pfz");
