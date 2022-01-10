@@ -1,7 +1,7 @@
 AC_INIT([libiosfunc],[0.0.1],[me@torrekie.dev],[],[https://github.com/bouldev/libiosfunc])
 AC_CONFIG_SRCDIR(README)
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE(subdir-objects)
+AM_INIT_AUTOMAKE([subdir-objects])
 dnl AM_GNU_GETTEXT(external)
 dnl AM_GNU_GETTEXT_VERSION(0.21)
 LT_INIT
@@ -16,6 +16,20 @@ AC_CONFIG_HEADERS([src/include/config.h])
 AC_CONFIG_FILES([
 	Makefile
 	libiosfunc.pc
+	src/Makefile
+	src/libSystem/Makefile
+	src/libSystem/libcompiler_rt/Makefile
+	src/libSystem/libkeymgr/Makefile
+	src/libSystem/libkxld/Makefile
+	src/libSystem/libsystem_asl/Makefile
+	src/libSystem/libsystem_c/Makefile
+	src/libSystem/libsystem_darwin/Makefile
+	src/libSystem/libsystem_info/Makefile
+	src/libSystem/libsystem_kernel/Makefile
+	src/libSystem/libsystem_platform/Makefile
+	src/libSystem/libsystem_pthread/Makefile
+	src/libSystem/libsystem_trace/Makefile
+	src/libSystem/libunc/Makefile
 ])
 
 AC_TYPE_SIZE_T
@@ -65,10 +79,12 @@ elif test "x$ac_cv_env_SDKROOT_set" != x; then
 	AC_MSG_RESULT([user defined: $SDKROOT])
 fi
 CFLAGS="$CFLAGS -isysroot $SDKROOT"
+LDFLAGS="$LDFLAGS --syslibroot $SDKROOT"
 
 AX_CHECK_COMPILE_FLAG(["-mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET"], [CFLAGS="$CFLAGS -mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET"], [
 	AC_MSG_ERROR([Clang with -mios-version-min=$IPHONEOS_DEPLOYMENT_TARGET support is required])
 ], [-Wno-incompatible-sysroot -Werror])
+AX_CHECK_COMPILE_FLAG(["-fPIC"], [CFLAGS="$CFLAGS -fPIC -DPIC"], [], [])
 dnl
 dnl if test "x$ac_cv_header_os_lock_private_h" != xyes ||
 dnl	test "x$ac_cv_header_xpc_xpc_h" != xyes ||
@@ -78,7 +94,6 @@ dnl	test "x$ac_cv_header_os_lock_private_h" != xyes ||
 dnl	test "x$ac_cv_header_utmp_h" != xyes ; then
 dnl	CFLAGS="$CFLAGS -Isrc/include/xnu_headers"
 dnl fi
-CFLAGS="$CFLAGS -Isrc/include/xnu_headers"
 AC_CHECK_HEADER_STDBOOL
 AC_CHECK_HEADER([libkern/OSCacheControl.h], [libkern_oscachecontrol_h="yes"], [libkern_oscachecontrol_h=])
 AC_MSG_CHECKING([whether to use libkern/OSCacheControl.h for sys_icache_invalidate()])
@@ -123,6 +138,13 @@ elif test "x$ac_cv_header_strings_h" != xyes; then
 elif test "x$ac_cv_header_sys_mount_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <sys/mount.h>])
 fi
+
+dnl AC_CHECK_LIB([stdc++], [__cxa_demangle], [LIBS="$LIBS -lstdc++"], [])
+dnl if test "x$ac_cv_lib_stdcpp___cxa_demangle" != xyes; then
+dnl	AC_CHECK_LIB([c++], [__cxa_demangle], [LIBS="$LIBS -lc++"], [
+dnl		AC_MSG_ERROR([Where is your __cxa_demangle()?])])
+dnl fi
+LIBS="$LIBS -lstdc++"
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])
 
