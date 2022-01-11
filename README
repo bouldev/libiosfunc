@@ -23,6 +23,7 @@
  Syslog: https://opensource.apple.com/source/syslog/syslog-385
  XNU: https://opensource.apple.com/source/xnu/xnu-7195.141.2
  libsecinit: https://github.com/0xbf00/libsecinit
+ ICU: https://github.com/unicode-org/icu/releases/tag/release-70-1
  
 *** DISCLAIMER ***
 

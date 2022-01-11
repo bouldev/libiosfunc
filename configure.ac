@@ -31,6 +31,8 @@ AC_CONFIG_FILES([
 	src/libSystem/libsystem_secinit/Makefile
 	src/libSystem/libsystem_trace/Makefile
 	src/libSystem/libunc/Makefile
+	src/libicucore/Makefile
+	src/libicucore/io/Makefile
 ])
 
 AC_TYPE_SIZE_T
@@ -145,7 +147,7 @@ dnl if test "x$ac_cv_lib_stdcpp___cxa_demangle" != xyes; then
 dnl	AC_CHECK_LIB([c++], [__cxa_demangle], [LIBS="$LIBS -lc++"], [
 dnl		AC_MSG_ERROR([Where is your __cxa_demangle()?])])
 dnl fi
-LIBS="$LIBS -lstdc++"
+LIBS="$LIBS -lstdc++ -licucore"
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])
 

@@ -1,1 +1,1 @@
-SUBDIRS = libSystem
+SUBDIRS = libSystem libicucore
