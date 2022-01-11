@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: libiosfunc
 Description: Provide missing Darwin syscalls for iOS
-Version: @LIBIOSFUNC_VERSION@
+Version: @VERSION@
 Libs: -L${libdir} -liosfunc
 Libs.private: @LIBS_EXTRA@
 Cflags: -I${includedir}/
