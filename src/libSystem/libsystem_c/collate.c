@@ -174,7 +174,8 @@ __collate_load_tables(const char *encoding, locale_t loc)
 	}
 	TMP->__refcount = 2; /* one for the locale, one for the cache */
 	TMP->__free_extra = NULL;
-
+#ifdef FREAD
+#undef FREAD
 #define FREAD(a, b, c, d) \
 { \
 	if (fread(a, b, c, d) != c) { \
@@ -185,7 +186,7 @@ __collate_load_tables(const char *encoding, locale_t loc)
 		return (_LDP_ERROR); \
 	} \
 }
-
+#endif
 	/* adjust size to read the remaining in one chunk */
 	i -= offsetof(struct __xlocale_st_collate, __char_pri_table);
 	FREAD(TMP->__char_pri_table, i, 1, fp);

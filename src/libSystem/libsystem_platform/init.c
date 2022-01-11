@@ -68,7 +68,7 @@ __pfz_setup_clear:
     }
 
 	if (base != 0) {
-		commpage_pfz_base = base;
+		commpage_pfz_base = (void *)base;
 	}
 }
 

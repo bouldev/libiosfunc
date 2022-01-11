@@ -38,6 +38,7 @@ libiosfunc_la_LIBADD = \
 	src/libSystem/libsystem_kernel/libsystem_kernel.la \
 	src/libSystem/libsystem_platform/libsystem_platform.la \
 	src/libSystem/libsystem_pthread/libsystem_pthread.la \
+	src/libSystem/libsystem_secinit/libsystem_secinit.la \
 	src/libSystem/libsystem_trace/libsystem_trace.la \
 	src/libSystem/libunc/libunc.la
 

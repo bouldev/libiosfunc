@@ -67,8 +67,9 @@ __sfvwrite(fp, uio)
 	/* make sure we can write */
 	if (prepwrite(fp) != 0)
 		return (EOF);
-
+#ifndef MIN
 #define	MIN(a, b) ((a) < (b) ? (a) : (b))
+#endif
 #define	COPY(n)	  (void)memcpy((void *)fp->_p, (void *)p, (size_t)(n))
 
 	iov = uio->uio_iov;

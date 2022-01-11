@@ -2,7 +2,6 @@ noinst_LTLIBRARIES = libkxld.la
 libkxld_la_CPPFLAGS = \
 	-I$(top_srcdir)/src/include \
 	-I$(top_srcdir)/src/include/xnu_headers \
-	-Ilibkern \
 	-isystem EXTERNAL_HEADERS
 libkxld_la_CFLAGS = -pedantic -dynamic -std=c99
 libkxld_la_SOURCES = \

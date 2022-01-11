@@ -8,5 +8,6 @@ SUBDIRS = libcompiler_rt \
 	  libsystem_kernel \
 	  libsystem_platform \
 	  libsystem_pthread \
+	  libsystem_secinit \
 	  libsystem_trace \
 	  libunc

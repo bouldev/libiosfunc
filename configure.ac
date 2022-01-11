@@ -28,6 +28,7 @@ AC_CONFIG_FILES([
 	src/libSystem/libsystem_kernel/Makefile
 	src/libSystem/libsystem_platform/Makefile
 	src/libSystem/libsystem_pthread/Makefile
+	src/libSystem/libsystem_secinit/Makefile
 	src/libSystem/libsystem_trace/Makefile
 	src/libSystem/libunc/Makefile
 ])
