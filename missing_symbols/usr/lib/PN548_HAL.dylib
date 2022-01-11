@@ -1,0 +1,49 @@
+diff -ur ios14.2-symbols/usr/lib/PN548_HAL.dylib.nm macosx11.2.3-symbols/usr/lib/PN548_HAL.dylib.nm
+--- ios14.2-symbols/usr/lib/PN548_HAL.dylib.nm	2022-01-11 16:00:03.091713071 +0800
++++ macosx11.2.3-symbols/usr/lib/PN548_HAL.dylib.nm	2022-01-11 16:00:32.861288316 +0800
+@@ -2,7 +2,6 @@
+ _NFCalibrationGetRFConfigTLVs
+ _NFHardwareDebug
+ _NFHardwareGPIOClose
+-_NFHardwareGPIOConfigureHammerfestSPMI
+ _NFHardwareGPIOIsHostWakeCapable
+ _NFHardwareGPIOOpen
+ _NFHardwareGPIOSetDeviceWake
+@@ -11,7 +10,6 @@
+ _NFHardwareGPIOSetPMUStandbyPowerEnabled
+ _NFHardwareGPIOSetPower
+ _NFHardwareGPIOSetVBAT
+-_NFHardwareGPIOValidateSPMIConfig
+ _NFHardwareGPIOWasItSPMINack
+ _NFHardwareGetCalibration
+ _NFHardwareGetRFConfigTLVs
+@@ -20,7 +18,6 @@
+ _NFHardwareInterfaceFlush
+ _NFHardwareInterfaceGetFlowControl
+ _NFHardwareInterfaceGetType
+-_NFHardwareInterfaceIsHammerfestAlive
+ _NFHardwareInterfaceIsHostWakeCapable
+ _NFHardwareInterfaceIsSupported
+ _NFHardwareInterfaceOpen
+@@ -36,9 +33,7 @@
+ _NFHardwareInterfaceSetPMUStandbyEnabled
+ _NFHardwareInterfaceSetPMUStandbyPowerEnabled
+ _NFHardwareInterfaceSetPower
+-_NFHardwareInterfaceSetSPMIConfig
+ _NFHardwareInterfaceSetVBAT
+-_NFHardwareInterfaceValidateSPMIConfig
+ _NFHardwareInterfaceWasItNACK
+ _NFHardwareInterfaceWrite
+ _NFHardwareLoad
+@@ -52,7 +47,6 @@
+ _NFHardwareSerialFlush
+ _NFHardwareSerialGetCTS
+ _NFHardwareSerialGetDefaultInterfaceType
+-_NFHardwareSerialIsHammerfestAlive
+ _NFHardwareSerialIsSupported
+ _NFHardwareSerialOpen
+ _NFHardwareSerialPower
+Only in ios14.2-symbols/usr/lib: libABMCommandDriversEUR.dylib.nm
+Only in ios14.2-symbols/usr/lib: libABMCommandDriversICE.dylib.nm
+Only in ios14.2-symbols/usr/lib: libARI.dylib.nm
+Only in ios14.2-symbols/usr/lib: libARIServer.dylib.nm

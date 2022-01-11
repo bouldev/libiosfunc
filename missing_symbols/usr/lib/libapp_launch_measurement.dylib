@@ -1,0 +1,23 @@
+diff -ur ios14.2-symbols/usr/lib/libapp_launch_measurement.dylib.nm macosx11.2.3-symbols/usr/lib/libapp_launch_measurement.dylib.nm
+--- ios14.2-symbols/usr/lib/libapp_launch_measurement.dylib.nm	2022-01-11 16:00:03.959136329 +0800
++++ macosx11.2.3-symbols/usr/lib/libapp_launch_measurement.dylib.nm	2022-01-11 16:00:33.321813403 +0800
+@@ -1,5 +1,4 @@
+ __alm_build_launch_info
+-_alm_FrontBoard_lifecycle_log
+ _alm_app_did_present
+ _alm_app_extended_launch_end
+ _alm_app_measurement_ongoing
+@@ -18,6 +17,7 @@
+ _alm_has_reached_launch_milestone
+ _alm_is_responsive_launch_bailed
+ _alm_legacy_app_regular_or_extended_launch_end
++_alm_legacy_macos_application_launch_log
+ _alm_reset_launch_milestone
++_alm_set_max_processed_block_count
+ _alm_stop_tracking_responsive_launch
+-_uikit_app_lifecycle_log
+Only in macosx11.2.3-symbols/usr/lib: libapr-1.0.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libaprutil-1.0.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libauditd.0.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libbootpolicy.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcodedirectory.dylib.nm

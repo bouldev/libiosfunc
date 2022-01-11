@@ -1,0 +1,118 @@
+diff -ur ios14.2-symbols/usr/lib/libicucore.A.dylib.nm macosx11.2.3-symbols/usr/lib/libicucore.A.dylib.nm
+--- ios14.2-symbols/usr/lib/libicucore.A.dylib.nm	2022-01-11 16:00:04.238043035 +0800
++++ macosx11.2.3-symbols/usr/lib/libicucore.A.dylib.nm	2022-01-11 16:00:33.772810435 +0800
+@@ -4059,7 +4059,9 @@
+ __ZN3icu9VTimeZoneD2Ev
+ __ZN3icu9VTimeZoneaSERKS0_
+ __ZN3icueqERKNS_11StringPieceES2_
++__ZN3iculsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_13UnicodeStringE
+ __ZN3icuplERKNS_13UnicodeStringES2_
++__ZN3icursERNSt3__113basic_istreamIcNS0_11char_traitsIcEEEERNS_13UnicodeStringE
+ __ZNK3icu10CECalendar14handleGetLimitE19UCalendarDateFieldsNS_8Calendar10ELimitTypeE
+ __ZNK3icu10CECalendar14inDaylightTimeER10UErrorCode
+ __ZNK3icu10CECalendar18haveDefaultCenturyEv
+@@ -6439,11 +6441,40 @@
+ _u_enumCharNames
+ _u_enumCharTypes
+ _u_errorName
++_u_fadopt
++_u_fclose
++_u_feof
++_u_fflush
++_u_fgetConverter
++_u_fgetNumberFormat
++_u_fgetc
++_u_fgetcodepage
++_u_fgetcx
++_u_fgetfile
++_u_fgetlocale
++_u_fgets
++_u_file_read
++_u_file_write
++_u_finit
+ _u_flushDefaultConverter
+ _u_foldCase
++_u_fopen
++_u_fopen_u
+ _u_forDigit
+ _u_formatMessage
+ _u_formatMessageWithError
++_u_fprintf
++_u_fprintf_u
++_u_fputc
++_u_fputs
++_u_frewind
++_u_fscanf
++_u_fscanf_u
++_u_fsetcodepage
++_u_fsetlocale
++_u_fsettransliterator
++_u_fstropen
++_u_fungetc
+ _u_getBidiPairedBracket
+ _u_getBinaryPropertySet
+ _u_getCombiningClass
+@@ -6464,6 +6495,7 @@
+ _u_getTimeZoneFilesDirectory
+ _u_getUnicodeVersion
+ _u_getVersion
++_u_get_stdout
+ _u_hasBinaryProperty
+ _u_init
+ _u_isEmoji
+@@ -6495,6 +6527,9 @@
+ _u_istitle
+ _u_isupper
+ _u_isxdigit
++_u_locbund_close
++_u_locbund_getNumberFormat
++_u_locbund_init
+ _u_memcasecmp
+ _u_memchr
+ _u_memchr32
+@@ -6507,6 +6542,8 @@
+ _u_memset
+ _u_parseMessage
+ _u_parseMessageWithError
++_u_printf
++_u_printf_u
+ _u_releaseDefaultConverter
+ _u_setAtomicIncDecFunctions
+ _u_setDataDirectory
+@@ -6514,6 +6551,12 @@
+ _u_setMutexFunctions
+ _u_setTimeZoneFilesDirectory
+ _u_shapeArabic
++_u_snprintf
++_u_snprintf_u
++_u_sprintf
++_u_sprintf_u
++_u_sscanf
++_u_sscanf_u
+ _u_strCaseCompare
+ _u_strCompare
+ _u_strCompareIter
+@@ -6575,8 +6618,18 @@
+ _u_versionToString
+ _u_vformatMessage
+ _u_vformatMessageWithError
++_u_vfprintf
++_u_vfprintf_u
++_u_vfscanf
++_u_vfscanf_u
+ _u_vparseMessage
+ _u_vparseMessageWithError
++_u_vsnprintf
++_u_vsnprintf_u
++_u_vsprintf
++_u_vsprintf_u
++_u_vsscanf
++_u_vsscanf_u
+ _uacal_getDayPeriod
+ _uadatpg_remapPatternWithOptions
+ _ualoc_getAppleParent
+Only in macosx11.2.3-symbols/usr/lib: libiodbc.2.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libiodbcinst.2.dylib.nm
+Only in ios14.2-symbols/usr/lib: liblockdown.dylib.nm
+Only in ios14.2-symbols/usr/lib: libmav_ipc_router_dynamic.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libmenu.5.4.dylib.nm

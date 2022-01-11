@@ -1,0 +1,22 @@
+diff -ur ios14.2-symbols/usr/lib/libspindump.dylib.nm macosx11.2.3-symbols/usr/lib/libspindump.dylib.nm
+--- ios14.2-symbols/usr/lib/libspindump.dylib.nm	2022-01-11 16:00:04.556630735 +0800
++++ macosx11.2.3-symbols/usr/lib/libspindump.dylib.nm	2022-01-11 16:00:34.205126684 +0800
+@@ -2,7 +2,11 @@
+ _SPExpectedHIDResponseDelayUntil
+ _SPGenerateSpindump
+ _SPHIDResponseDelayThreshold
++_SPNotifyLeavingFullWake
+ _SPReportCPUUsageResource
+ _SPReportCPUWakeupsResource
+ _SPReportDiskWritesResource
+ _SPReportHIDResponseDelay
++_SPReportStuckProcess
++_SPReportStuckProcessWithCallback
++_SPReportUnstuckProcess
+Only in macosx11.2.3-symbols/usr/lib: libssl.35.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libssl.43.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libssl.44.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libssl.46.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libssl.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libstdc++.6.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libsysmon.dylib.nm

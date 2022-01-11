@@ -1,0 +1,18 @@
+diff -ur ios14.2-symbols/usr/lib/libmorphun.dylib.nm macosx11.2.3-symbols/usr/lib/libmorphun.dylib.nm
+--- ios14.2-symbols/usr/lib/libmorphun.dylib.nm	2022-01-11 16:00:04.353562937 +0800
++++ macosx11.2.3-symbols/usr/lib/libmorphun.dylib.nm	2022-01-11 16:00:33.897450939 +0800
+@@ -781,9 +781,6 @@
+ __ZN7morphun9exception11IOExceptionD0Ev
+ __ZN7morphun9exception11IOExceptionD1Ev
+ __ZN7morphun9exception11IOExceptionD2Ev
+-__ZN7morphun9exception12ICUException14throwOnFailureE10UErrorCode
+-__ZN7morphun9exception12ICUException14throwOnFailureE10UErrorCodePKDs
+-__ZN7morphun9exception12ICUException14throwOnFailureE10UErrorCodeRKNSt3__112basic_stringIDsNS3_11char_traitsIDsEENS3_9allocatorIDsEEEE
+ __ZN7morphun9exception12ICUExceptionC1E10UErrorCode
+ __ZN7morphun9exception12ICUExceptionC1E10UErrorCodeRKNSt3__112basic_stringIDsNS3_11char_traitsIDsEENS3_9allocatorIDsEEEE
+ __ZN7morphun9exception12ICUExceptionC2E10UErrorCode
+Only in macosx11.2.3-symbols/usr/lib: libnetsnmp.25.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libnetsnmpagent.25.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libnetsnmphelpers.25.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libnetsnmpmibs.25.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libnetsnmptrapd.25.dylib.nm

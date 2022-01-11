@@ -1,0 +1,40 @@
+diff -ur ios14.2-symbols/usr/lib/libnetwork.dylib.nm macosx11.2.3-symbols/usr/lib/libnetwork.dylib.nm
+--- ios14.2-symbols/usr/lib/libnetwork.dylib.nm	2022-01-11 16:00:04.376276297 +0800
++++ macosx11.2.3-symbols/usr/lib/libnetwork.dylib.nm	2022-01-11 16:00:33.962287100 +0800
+@@ -1808,7 +1808,6 @@
+ _nw_quic_connection_execute_locked
+ _nw_quic_connection_get_ack_delay_size
+ _nw_quic_connection_get_application_error
+-_nw_quic_connection_get_application_error_handler
+ _nw_quic_connection_get_application_result
+ _nw_quic_connection_get_application_result_handler
+ _nw_quic_connection_get_force_version_negotiation
+@@ -1835,6 +1834,7 @@
+ _nw_quic_connection_metadata_set_stream_options
+ _nw_quic_connection_report_application_result
+ _nw_quic_connection_set_ack_delay_size
++_nw_quic_connection_set_application_error_internal
+ _nw_quic_connection_set_application_result_handler
+ _nw_quic_connection_set_close_with_error_handler
+ _nw_quic_connection_set_force_version_negotiation
+@@ -1876,11 +1876,11 @@
+ _nw_quic_stream_copy_shared_connection_options
+ _nw_quic_stream_execute_locked
+ _nw_quic_stream_get_application_error
+-_nw_quic_stream_get_application_error_handler
+ _nw_quic_stream_get_id
+ _nw_quic_stream_get_is_unidirectional
+ _nw_quic_stream_set_application_error
+ _nw_quic_stream_set_application_error_handler
++_nw_quic_stream_set_application_error_internal
+ _nw_quic_stream_set_id
+ _nw_quic_stream_set_is_unidirectional
+ _nw_release
+@@ -2071,6 +2071,7 @@
+ _nw_setting_tcp_input_max_aggregate
+ _nw_setting_tcp_slab_buffer_size
+ _nw_setting_tcp_timer_disable_qos_override
++_nw_setting_tcp_timerlist_max_offset
+ _nw_setting_tcpconn_disable_simulate_crash
+ _nw_setting_tcpconn_disable_tls13
+ _nw_setting_tcpconn_disable_tls_experiment_sampling

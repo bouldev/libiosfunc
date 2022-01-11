@@ -1,0 +1,44 @@
+diff -ur ios14.2-symbols/usr/lib/libDHCPServer.A.dylib.nm macosx11.2.3-symbols/usr/lib/libDHCPServer.A.dylib.nm
+--- ios14.2-symbols/usr/lib/libDHCPServer.A.dylib.nm	2022-01-11 16:00:03.465195549 +0800
++++ macosx11.2.3-symbols/usr/lib/libDHCPServer.A.dylib.nm	2022-01-11 16:00:33.028741946 +0800
+@@ -2,8 +2,17 @@
+ _DHCPSDHCPLeaseListCreate
+ _DHCPSDHCPLeaseListNotificationKey
+ _DHCPSDisabledInterfacesNotificationKey
++_DHCPSNetBootClientListCreate
+ _kDHCPSPropDHCPHWAddress
+ _kDHCPSPropDHCPIPAddress
+ _kDHCPSPropDHCPLease
+ _kDHCPSPropIdentifier
+ _kDHCPSPropName
++_kDHCPSPropNetBootArch
++_kDHCPSPropNetBootIPAddress
++_kDHCPSPropNetBootImageID
++_kDHCPSPropNetBootImageIndex
++_kDHCPSPropNetBootImageIsInstall
++_kDHCPSPropNetBootImageKind
++_kDHCPSPropNetBootLastBootTime
++_kDHCPSPropNetBootSysid
+Only in macosx11.2.3-symbols/usr/lib: libDiagnosticMessagesClient.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDIAGLoggingDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDLFDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDLOADCoreDumpDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDLOADDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDMCDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLEFSDumpDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libETLSAHDynamic.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libEndpointSecurity.dylib.nm
+Only in ios14.2-symbols/usr/lib: libFusionComponentCheck.dylib.nm
+Only in ios14.2-symbols/usr/lib: libH5Dynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libHDLCDynamic.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libIASAuthReboot.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libIASUnifiedProgress.dylib.nm
+Only in ios14.2-symbols/usr/lib: libICEClient.dylib.nm
+Only in ios14.2-symbols/usr/lib: libIOABP.dylib.nm
+Only in ios14.2-symbols/usr/lib: libIOACIPC.dylib.nm
+Only in ios14.2-symbols/usr/lib: libIOACIPCICEBB.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libIOGTrace.dylib.nm
+Only in ios14.2-symbols/usr/lib: libKTLDynamic.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libKernelCollectionBuilder.dylib.nm
+Only in ios14.2-symbols/usr/lib: libLLVM.dylib.nm

@@ -1,0 +1,23 @@
+diff -ur ios14.2-symbols/usr/lib/libMemoryResourceException.dylib.nm macosx11.2.3-symbols/usr/lib/libMemoryResourceException.dylib.nm
+--- ios14.2-symbols/usr/lib/libMemoryResourceException.dylib.nm	2022-01-11 16:00:03.711560759 +0800
++++ macosx11.2.3-symbols/usr/lib/libMemoryResourceException.dylib.nm	2022-01-11 16:00:33.162729300 +0800
+@@ -18,6 +18,7 @@
+ _OBJC_METACLASS_$_FPProcess
+ _OBJC_METACLASS_$_MemoryResourceException
+ _OBJC_METACLASS_$_RMECacheEnumerator
++_RMECheckEntitlement
+ _ReportMemoryExceptionFromTask
+ _kMREOutputFormatterCategoryTotalKey
+ _kMREOutputFormatterCleanKey
+Only in ios14.2-symbols/usr/lib: libMobileCheckpoint.dylib.nm
+Only in ios14.2-symbols/usr/lib: libMobileGestaltExtensions.dylib.nm
+Only in ios14.2-symbols/usr/lib: libPCITransport.dylib.nm
+Only in ios14.2-symbols/usr/lib: libPPM.dylib.nm
+Only in ios14.2-symbols/usr/lib: libPPMDataModel.dylib.nm
+Only in ios14.2-symbols/usr/lib: libRoseBooter.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libRosetta.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libScreenReader.dylib.nm
+Only in ios14.2-symbols/usr/lib: libTelephonyBasebandDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libTelephonyDebugDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libTelephonyIOKitDynamic.dylib.nm
+Only in ios14.2-symbols/usr/lib: libTelephonyUSBDynamic.dylib.nm

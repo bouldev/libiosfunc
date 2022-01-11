@@ -1,0 +1,8 @@
+diff -ur ios14.2-symbols/usr/lib/libnetworkextension.dylib.nm macosx11.2.3-symbols/usr/lib/libnetworkextension.dylib.nm
+--- ios14.2-symbols/usr/lib/libnetworkextension.dylib.nm	2022-01-11 16:00:04.385387649 +0800
++++ macosx11.2.3-symbols/usr/lib/libnetworkextension.dylib.nm	2022-01-11 16:00:33.971157829 +0800
+@@ -1,3 +1,4 @@
++_g_NEFilterDisable
+ _g_stats_globals
+ _g_testControlUnit
+ _ne_filter_allocate_globals

@@ -1,0 +1,151 @@
+diff -ur ios14.2-symbols/usr/lib/libobjc.A.dylib.nm macosx11.2.3-symbols/usr/lib/libobjc.A.dylib.nm
+--- ios14.2-symbols/usr/lib/libobjc.A.dylib.nm	2022-01-11 16:00:04.422684714 +0800
++++ macosx11.2.3-symbols/usr/lib/libobjc.A.dylib.nm	2022-01-11 16:00:34.036105239 +0800
+@@ -98,6 +98,7 @@
+ _class_copyPropertyList
+ _class_copyProtocolList
+ _class_createInstance
++_class_createInstanceFromZone
+ _class_createInstances
+ _class_getClassMethod
+ _class_getClassVariable
+@@ -145,12 +146,27 @@
+ _method_getTypeEncoding
+ _method_invoke
+ _method_setImplementation
++_objc_addExceptionHandler
+ _objc_addLoadImageFunc
+ _objc_alloc
+ _objc_allocWithZone
+ _objc_alloc_init
+ _objc_allocateClassPair
+ _objc_allocateProtocol
++_objc_allocate_object
++_objc_appRequiresGC
++_objc_assertRegisteredThreadWithCollector
++_objc_assign_global
++_objc_assign_ivar
++_objc_assign_strongCast
++_objc_assign_threadlocal
++_objc_assign_weak
++_objc_atomicCompareAndSwapGlobal
++_objc_atomicCompareAndSwapGlobalBarrier
++_objc_atomicCompareAndSwapInstanceVariable
++_objc_atomicCompareAndSwapInstanceVariableBarrier
++_objc_atomicCompareAndSwapPtr
++_objc_atomicCompareAndSwapPtrBarrier
+ _objc_autorelease
+ _objc_autoreleasePoolPop
+ _objc_autoreleasePoolPush
+@@ -159,13 +175,15 @@
+ _objc_cache_buckets
+ _objc_cache_bytesForCapacity
+ _objc_cache_capacity
+-_objc_cache_isConstantOptimizedCache
+ _objc_cache_occupied
+-_objc_cache_preoptCache
+-_objc_cache_preoptCapacity
+-_objc_cache_preoptFallbackClass
+ _objc_class_abi_version
+ _objc_clear_deallocating
++_objc_clear_stack
++_objc_collect
++_objc_collect_init
++_objc_collectableZone
++_objc_collectingEnabled
++_objc_collecting_enabled
+ _objc_constructInstance
+ _objc_copyClassList
+ _objc_copyClassNamesForImage
+@@ -214,12 +232,14 @@
+ _objc_destroyWeak
+ _objc_destructInstance
+ _objc_disposeClassPair
++_objc_dumpHeap
+ _objc_duplicateClass
+ _objc_ehtype_vtable
+ _objc_end_catch
+ _objc_enumerationMutation
+ _objc_exception_rethrow
+ _objc_exception_throw
++_objc_finalizeOnMainThread
+ _objc_getAssociatedObject
+ _objc_getClass
+ _objc_getClassList
+@@ -233,10 +253,13 @@
+ _objc_initWeak
+ _objc_initWeakOrNil
+ _objc_initializeClassPair
++_objc_isAuto
++_objc_is_finalized
+ _objc_loadClassref
+ _objc_loadWeak
+ _objc_loadWeakRetained
+ _objc_lookUpClass
++_objc_memmove_collectable
+ _objc_moveWeak
+ _objc_msgLookup
+ _objc_msgLookupSuper2
+@@ -252,10 +275,13 @@
+ _objc_opt_respondsToSelector
+ _objc_opt_self
+ _objc_readClassPair
++_objc_read_weak
+ _objc_registerClassPair
+ _objc_registerProtocol
++_objc_registerThreadWithCollector
+ _objc_release
+ _objc_removeAssociatedObjects
++_objc_removeExceptionHandler
+ _objc_retain
+ _objc_retainAutorelease
+ _objc_retainAutoreleaseReturnValue
+@@ -264,6 +290,8 @@
+ _objc_retain_autorelease
+ _objc_retainedObject
+ _objc_setAssociatedObject
++_objc_setCollectionRatio
++_objc_setCollectionThreshold
+ _objc_setEnumerationMutationHandler
+ _objc_setExceptionMatcher
+ _objc_setExceptionPreprocessor
+@@ -277,7 +305,11 @@
+ _objc_setProperty_nonatomic
+ _objc_setProperty_nonatomic_copy
+ _objc_setUncaughtExceptionHandler
++_objc_set_collection_ratio
++_objc_set_collection_threshold
+ _objc_should_deallocate
++_objc_startCollectorThread
++_objc_start_collector_thread
+ _objc_storeStrong
+ _objc_storeWeak
+ _objc_storeWeakOrNil
+@@ -285,10 +317,12 @@
+ _objc_sync_exit
+ _objc_sync_try_enter
+ _objc_terminate
++_objc_unregisterThreadWithCollector
+ _objc_unretainedObject
+ _objc_unretainedPointer
+ _objc_unsafeClaimAutoreleasedReturnValue
+ _object_copy
++_object_copyFromZone
+ _object_dispose
+ _object_getClass
+ _object_getClassName
+Only in macosx11.2.3-symbols/usr/lib: libodfde.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libodmodule.dylib.nm
+Only in ios14.2-symbols/usr/lib: libolaf.dylib.nm
+Only in ios14.2-symbols/usr/lib: libomadm.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libpam.1.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libpam.2.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libpanel.5.4.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libpcre.0.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libpcreposix.0.dylib.nm
+Only in ios14.2-symbols/usr/lib: libprotobuf-lite.dylib.nm
+Only in ios14.2-symbols/usr/lib: libprotobuf.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libquit.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libruby.2.6.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libsasl2.2.dylib.nm
+Only in ios14.2-symbols/usr/lib: libsp.dylib.nm

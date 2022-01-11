@@ -1,0 +1,258 @@
+diff -ur ios14.2-symbols/usr/lib/libAccessibility.dylib.nm macosx11.2.3-symbols/usr/lib/libAccessibility.dylib.nm
+--- ios14.2-symbols/usr/lib/libAccessibility.dylib.nm	2022-01-11 16:00:03.286594507 +0800
++++ macosx11.2.3-symbols/usr/lib/libAccessibility.dylib.nm	2022-01-11 16:00:32.896143785 +0800
+@@ -7,9 +7,6 @@
+ _AXNSLocalizedStringForLocale
+ _AXRetrieveSupportedAccessibilityLanguages
+ _AXSAccessibilityUtilitiesPath
+-_AXSAirPodsDictionaryForPreference
+-_AXSAirPodsUpdatedDictionaryForPreference
+-_AXSVoltaDataDirectory
+ _OBJC_CLASS_$_AXDefaultsObserverExecuteBlockNotificationAction
+ _OBJC_CLASS_$_AXDefaultsObserverPostDarwinNotificationAction
+ _OBJC_CLASS_$_AXSupportDefaultsObserver
+@@ -34,15 +31,7 @@
+ __AXSAccessibilityGetBooleaniTunesPreference
+ __AXSAccessibilityHasNoticedOpaqueTouchDevice
+ __AXSAccessibilityPreferenceDomain
+-__AXSAccessibilitySecureIntentProvider
+-__AXSAccessibilitySetSecureIntentProvider
+ __AXSAccessibilitySetiTunesPreference
+-__AXSAirPodSettingForDevice
+-__AXSAirPodSettingSetForDevice
+-__AXSAirPodsHoldDuration
+-__AXSAirPodsNoiseCancellationWithOneUnit
+-__AXSAirPodsSpatialAudioLockToDevice
+-__AXSAirPodsTapSpeed
+ __AXSAllowOpaqueTouchGestures
+ __AXSAppleTVRemoteUsesSimpleGestures
+ __AXSApplicationAccessibilityEnabled
+@@ -71,8 +60,6 @@
+ __AXSAutomationSetFauxCollectionViewCellsEnabled
+ __AXSAutomationSetFauxTableViewCellsEnabled
+ __AXSAutomationSetHitpointWarpingEnabled
+-__AXSBackTapEnabled
+-__AXSBackTapSetEnabled
+ __AXSBlueYellowFilterEnabled
+ __AXSBlueYellowFilterSetEnabled
+ __AXSBrailleInputDeviceConnected
+@@ -174,8 +161,6 @@
+ __AXSLargeTextUsesExtendedRange
+ __AXSLeftRightAudioBalance
+ __AXSLetterFeedbackEnabled
+-__AXSLiveHeadphoneLevelEnabled
+-__AXSLiveHeadphoneLevelSetEnabled
+ __AXSLocalizationCaptionMode
+ __AXSLockClickDownPressDurationScaleFactor
+ __AXSLockClickVarianceScaleFactor
+@@ -192,30 +177,6 @@
+ __AXSPearlRestingUnlockEverSet
+ __AXSPearlSetRestingUnlock
+ __AXSPhoneticFeedbackEnabled
+-__AXSPointerAllowAppCustomizationEnabled
+-__AXSPointerAllowAppCustomizationSetEnabled
+-__AXSPointerAutoHideDuration
+-__AXSPointerAutoHideEnabled
+-__AXSPointerAutoHideSetEnabled
+-__AXSPointerEffectScalingEnabled
+-__AXSPointerEffectScalingSetEnabled
+-__AXSPointerIncreasedContrastEnabled
+-__AXSPointerIncreasedContrastSetEnabled
+-__AXSPointerInertiaEnabled
+-__AXSPointerInertiaSetEnabled
+-__AXSPointerScaleWithZoomLevelEnabled
+-__AXSPointerScaleWithZoomLevelSetEnabled
+-__AXSPointerSetAutoHideDuration
+-__AXSPointerSetSizeMultiplier
+-__AXSPointerSetStrokeColor
+-__AXSPointerSetStrokeColorWidth
+-__AXSPointerSetVoiceOverCursorOption
+-__AXSPointerShouldShowCenterPoint
+-__AXSPointerSizeMultiplier
+-__AXSPointerStrokeColor
+-__AXSPointerStrokeColorValues
+-__AXSPointerStrokeColorWidth
+-__AXSPointerVoiceOverCursorOption
+ __AXSPreferredFontSize
+ __AXSPreferredFontSizeSetSize
+ __AXSProcessDrawsAssistiveUI
+@@ -243,10 +204,6 @@
+ __AXSSetAccessibilityEnabled
+ __AXSSetAccessibilityHasNoticedOpaqueTouchDevice
+ __AXSSetAccessibilityNeedsCameraOnLockScreen
+-__AXSSetAirPodsHoldDuration
+-__AXSSetAirPodsNoiseCancellationWithOneUnit
+-__AXSSetAirPodsSpatialAudioLockToDevice
+-__AXSSetAirPodsTapSpeed
+ __AXSSetAllowOpaqueTouchGestures
+ __AXSSetAppleTVRemoteUsesSimpleGestures
+ __AXSSetAttentionAwarenessFeaturesEnabled
+@@ -297,7 +254,6 @@
+ __AXSSetScreenContrast
+ __AXSSetShakeToUndoDisabled
+ __AXSSetShouldUseSpringBoardForHomeButtonDetection
+-__AXSSetShowAudioTranscriptions
+ __AXSSetSideButtonClickSpeed
+ __AXSSetSiriSemanticContextEnabled
+ __AXSSetSlowKeysAcceptanceDelay
+@@ -309,15 +265,12 @@
+ __AXSSetUseSingleSystemColor
+ __AXSSetUserEnabledPasscodeForPurchases
+ __AXSSetVibrationDisabled
+-__AXSSetVoltaDataCollectionEnabled
+-__AXSSetVoltaEnabled
+ __AXSSetWebAccessibilityEventsEnabled
+ __AXSSetWebProcessAllowsSecondaryThreadAccess
+ __AXSSetWordFeedbackEnabled
+ __AXSSetWriteableClient
+ __AXSShakeToUndoDisabled
+ __AXSShouldUseSpringBoardForHomeButtonDetection
+-__AXSShowAudioTranscriptions
+ __AXSSideButtonClickSpeed
+ __AXSSideButtonClickSpeedEnabled
+ __AXSSingleSystemColorValues
+@@ -326,7 +279,6 @@
+ __AXSSlowKeysEnabled
+ __AXSSoftwareTTYEnabled
+ __AXSSoftwareTTYSetEnabled
+-__AXSSoundDetectionRunning
+ __AXSSpeakThisEnabled
+ __AXSSpeakThisHighlightVisible
+ __AXSSpeakThisSetHighlightVisible
+@@ -346,10 +298,6 @@
+ __AXSVideosPreferenceDomain
+ __AXSVisualAlertEnabled
+ __AXSVisualAlertSetEnabled
+-__AXSVoiceOverSpeakUnderPointerDelay
+-__AXSVoiceOverSpeakUnderPointerEnabled
+-__AXSVoiceOverSpeakUnderPointerSetDelay
+-__AXSVoiceOverSpeakUnderPointerSetEnabled
+ __AXSVoiceOverTouchBrailleContractionMode
+ __AXSVoiceOverTouchBrailleDisplayDisconnectOnSleep
+ __AXSVoiceOverTouchBrailleEightDotMode
+@@ -392,8 +340,6 @@
+ __AXSVoiceOverTouchUsageConfirmed
+ __AXSVoiceOverTouchUserHasReadNoHomeButtonGestureDescription
+ __AXSVoiceOverTouchVolume
+-__AXSVoltaDataCollectionEnabled
+-__AXSVoltaEnabled
+ __AXSWalkieTalkieSetTapToTalkEnabled
+ __AXSWalkieTalkieTapToTalkEnabled
+ __AXSWebAccessibilityEventsEnabled
+@@ -411,7 +357,6 @@
+ __AXSZoomTouchToggledByVoiceOver
+ __AXSetPreferenceWithNotification
+ __AXSystemRootDirectory
+-___AXSSoundDetectionState
+ __axsPrefsToNotificationMap
+ __getFloatPreference
+ __kAXSAutomationLocalizedStringLookupInfoEnabledNotification
+@@ -433,13 +378,6 @@
+ _kAXSAccessibilityEnabledPreference
+ _kAXSAccessibilityNeedsCameraOnLockScreenPreference
+ _kAXSAccessibilityPreferenceDomain
+-_kAXSAirPodSpatialAudioLockToDeviceChangedNotification
+-_kAXSAirPodsHoldDurationChangedNotification
+-_kAXSAirPodsHoldDurationPreference
+-_kAXSAirPodsNoiseCancellationWithOneUnitChangedNotification
+-_kAXSAirPodsNoiseCancellationWithOneUnitPreference
+-_kAXSAirPodsTapSpeedChangedNotification
+-_kAXSAirPodsTouchTapSpeedPreference
+ _kAXSAllowOpaqueTouchGesturesChangedNotification
+ _kAXSAllowOpaqueTouchGesturesPreference
+ _kAXSApplePreferredContentSizeCategoryNotification
+@@ -472,8 +410,6 @@
+ _kAXSAutomationLocalizedStringLookupInfoEnabledPreference
+ _kAXSAutomationPreferredLanguagePreference
+ _kAXSBUserAuthenticationStateDidChangeNotification
+-_kAXSBackTapEnabledDidChangeNotification
+-_kAXSBackTapEnabledPreference
+ _kAXSBrailleInputDeviceConnectedDidChangeNotification
+ _kAXSBrailleInputDeviceConnectedPreference
+ _kAXSButtonShapesEnabledNotification
+@@ -510,7 +446,6 @@
+ _kAXSDwellControlEnabledPreference
+ _kAXSEarpieceNoiseCancellationEnabledNotification
+ _kAXSEarpieceNoiseCancellationPreference
+-_kAXSEnabledSoundDetectionStatePreference
+ _kAXSEnhanceBackgroundContrastChangedNotification
+ _kAXSEnhanceBackgroundContrastPreference
+ _kAXSEnhanceTextLegibilityChangedNotification
+@@ -578,8 +513,6 @@
+ _kAXSLeftRightBalancePreference
+ _kAXSLetterFeedbackEnabledNotification
+ _kAXSLetterFeedbackEnabledPreference
+-_kAXSLiveHeadphoneLevelEnabledDidChangeNotification
+-_kAXSLiveHeadphoneLevelEnabledPreference
+ _kAXSLocalizationCaptionModeEnabledPreference
+ _kAXSLocalizationCaptionModeNotification
+ _kAXSLogValidationErrorsNotification
+@@ -602,34 +535,6 @@
+ _kAXSPersonalAudioPreferenceDomain
+ _kAXSPhoneticFeedbackEnabledNotification
+ _kAXSPhoneticFeedbackEnabledPreference
+-_kAXSPointerAllowAppCustomizationEnabledPreference
+-_kAXSPointerAllowAppCustomizationPreferenceDidChangeNotification
+-_kAXSPointerAutoHideDurationMaximum
+-_kAXSPointerAutoHideDurationMinimum
+-_kAXSPointerAutoHideDurationPreference
+-_kAXSPointerAutoHideDurationPreferenceDidChangeNotification
+-_kAXSPointerAutoHideEnabledPreference
+-_kAXSPointerAutoHidePreferenceDidChangeNotification
+-_kAXSPointerEffectScalingEnabledPreference
+-_kAXSPointerEffectScalingPreferenceDidChangeNotification
+-_kAXSPointerIncreasedContrastEnabledPreference
+-_kAXSPointerIncreasedContrastPreferenceDidChangeNotification
+-_kAXSPointerInertiaEnabledPreference
+-_kAXSPointerInertiaPreferenceDidChangeNotification
+-_kAXSPointerScaleWithZoomLevelEnabledPreference
+-_kAXSPointerScaleWithZoomLevelPreferenceDidChangeNotification
+-_kAXSPointerSetSizeMultiplierMaximum
+-_kAXSPointerSetSizeMultiplierMinimum
+-_kAXSPointerShowCenterPointMultiplierThreshold
+-_kAXSPointerSizeMultiplierPreference
+-_kAXSPointerSizeMultiplierPreferenceDidChangeNotification
+-_kAXSPointerStrokeColorPreference
+-_kAXSPointerStrokeColorPreferenceDidChangeNotification
+-_kAXSPointerStrokeColorWidthMaximum
+-_kAXSPointerStrokeColorWidthMinimum
+-_kAXSPointerStrokeColorWidthPreference
+-_kAXSPointerVoiceOverCursorOptionPreference
+-_kAXSPointerVoiceOverCursorOptionPreferenceDidChangeNotification
+ _kAXSPreLoadInvertColorsEnabledNotification
+ _kAXSPreferredFontSizeChangedNotification
+ _kAXSPreferredFontSizeDisabled
+@@ -666,8 +571,6 @@
+ _kAXSShakeToUndoDisabledPreferenceDidChangeNotification
+ _kAXSShouldUseSpringBoardForHomeButtonDetectionPreference
+ _kAXSShouldUseSpringBoardForHomeButtonDetectionPreferenceDidChangeNotification
+-_kAXSShowAudioTranscriptionsChangedNotification
+-_kAXSShowAudioTranscriptionsEnabled
+ _kAXSSideButtonClickSpeedChangedNotification
+ _kAXSSideButtonClickSpeedEnabledNotification
+ _kAXSSideButtonClickSpeedPreference
+@@ -710,11 +613,6 @@
+ _kAXSVoiceOverActivitiesPreferenceDomain
+ _kAXSVoiceOverLaunchedNotification
+ _kAXSVoiceOverPreferenceDomain
+-_kAXSVoiceOverSpeakUnderPointerDelayMaximum
+-_kAXSVoiceOverSpeakUnderPointerDelayMinimum
+-_kAXSVoiceOverSpeakUnderPointerDelayPreference
+-_kAXSVoiceOverSpeakUnderPointerPreference
+-_kAXSVoiceOverSpeakUnderPointerPreferenceDidChangeNotification
+ _kAXSVoiceOverTouchBrailleBluetoothDisplayChangedNotification
+ _kAXSVoiceOverTouchBrailleBluetoothDisplayPreference
+ _kAXSVoiceOverTouchBrailleBrailleDisplayDisconnectOnSleepChangedNotification
+@@ -759,10 +657,6 @@
+ _kAXSVoiceOverTouchUserHasReadNoHomeButtonGesturePreference
+ _kAXSVoiceOverTouchVolumeChangedNotification
+ _kAXSVoiceOverTouchVolumePreference
+-_kAXSVoltaDataCollectionEnabledNotification
+-_kAXSVoltaDataCollectionEnabledPreference
+-_kAXSVoltaEnabledNotification
+-_kAXSVoltaEnabledPreference
+ _kAXSWalkieTalkieTapToTalkChangedNotification
+ _kAXSWalkieTalkieTapToTalkPreference
+ _kAXSWebAccessibilityEventsEnabledNotification
+Only in macosx11.2.3-symbols/usr/lib: libAccountPolicyTranslation.dylib.nm
+Only in ios14.2-symbols/usr/lib: libAppPatch.dylib.nm

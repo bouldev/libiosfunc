@@ -1,0 +1,39 @@
+diff -ur ios14.2-symbols/usr/lib/PN548_API.dylib.nm macosx11.2.3-symbols/usr/lib/PN548_API.dylib.nm
+--- ios14.2-symbols/usr/lib/PN548_API.dylib.nm	2022-01-11 16:00:03.082813009 +0800
++++ macosx11.2.3-symbols/usr/lib/PN548_API.dylib.nm	2022-01-11 16:00:32.852699750 +0800
+@@ -27,7 +27,6 @@
+ _NFDriverEnableHeadlessTestMode
+ _NFDriverEnableLpcdAssist
+ _NFDriverEnablePowerStateTracking
+-_NFDriverEnableSecondaryReaderModePower
+ _NFDriverGPIOSetPMUStandbyPowerEnabled
+ _NFDriverGetControllerInfo
+ _NFDriverGetHeadlessModeFlags
+@@ -43,19 +42,13 @@
+ _NFDriverIsSecureElementEnumerated
+ _NFDriverIsSecureElementPresent
+ _NFDriverLoadStack
+-_NFDriverNFCCPowerOff
+ _NFDriverOpen
+ _NFDriverPrepareForHeadlessMode
+ _NFDriverPrintTagType
+ _NFDriverRFSettingsCopy
+ _NFDriverRFSettingsCopyLegacy
+-_NFDriverRFSettingsCopySigned
+-_NFDriverRFSettingsGetVendorParameters
+-_NFDriverRFSettingsPushSignedSetting
+ _NFDriverRFSettingsSetup
+ _NFDriverRFSettingsSetupLegacy
+-_NFDriverRFSettingsSetupSigned
+-_NFDriverRFSettingsStoreValueForTagAtOffset
+ _NFDriverReadDieID
+ _NFDriverRedactLogging
+ _NFDriverRemoteDevCheckNdef
+@@ -136,7 +129,6 @@
+ __Callback_NFDriverRemoteDevGetMiFareInfo
+ __NFDriverHasMFW
+ __NFDriverRFTechToTagType
+-__NFDriverSetRFProperty
+ __NFDriverSetRFSettings
+ __NFDriverSetStandbyMode
+ _gPN548_API_logv

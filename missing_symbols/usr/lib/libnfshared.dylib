@@ -1,0 +1,31 @@
+diff -ur ios14.2-symbols/usr/lib/libnfshared.dylib.nm macosx11.2.3-symbols/usr/lib/libnfshared.dylib.nm
+--- ios14.2-symbols/usr/lib/libnfshared.dylib.nm	2022-01-11 16:00:04.405015587 +0800
++++ macosx11.2.3-symbols/usr/lib/libnfshared.dylib.nm	2022-01-11 16:00:33.990009443 +0800
+@@ -61,8 +61,6 @@
+ _AWDNFCVASTransactionExceptionEventReadFrom
+ _AWDNFCVersionsReadFrom
+ _GetElapsedTimeInMillisecondsFromMachTime
+-_NFAccessoryTagI2CBridgeErrorDomain
+-_NFBuildVersion
+ _NFCreateRootQueue
+ _NFDataAppend
+ _NFDataAppendBytes
+@@ -238,8 +236,6 @@
+ _OBJC_CLASS_$_NFAWDVASSelect
+ _OBJC_CLASS_$_NFAWDVASTransactionException
+ _OBJC_CLASS_$_NFAWDVersionInfo
+-_OBJC_CLASS_$_NFAccessoryTag
+-_OBJC_CLASS_$_NFAccessoryTagI2CBridge
+ _OBJC_CLASS_$_NFCommandAPDU
+ _OBJC_CLASS_$_NFCurrency
+ _OBJC_CLASS_$_NFJSONEncoder
+@@ -882,8 +878,6 @@
+ _OBJC_METACLASS_$_NFAWDVASSelect
+ _OBJC_METACLASS_$_NFAWDVASTransactionException
+ _OBJC_METACLASS_$_NFAWDVersionInfo
+-_OBJC_METACLASS_$_NFAccessoryTag
+-_OBJC_METACLASS_$_NFAccessoryTagI2CBridge
+ _OBJC_METACLASS_$_NFCommandAPDU
+ _OBJC_METACLASS_$_NFCurrency
+ _OBJC_METACLASS_$_NFJSONEncoder
+Only in macosx11.2.3-symbols/usr/lib: liboah.dylib.nm

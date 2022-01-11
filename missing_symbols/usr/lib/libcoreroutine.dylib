@@ -1,0 +1,236 @@
+diff -ur ios14.2-symbols/usr/lib/libcoreroutine.dylib.nm macosx11.2.3-symbols/usr/lib/libcoreroutine.dylib.nm
+--- ios14.2-symbols/usr/lib/libcoreroutine.dylib.nm	2022-01-11 16:00:04.083359797 +0800
++++ macosx11.2.3-symbols/usr/lib/libcoreroutine.dylib.nm	2022-01-11 16:00:33.490800891 +0800
+@@ -11,19 +11,17 @@
+ _OBJC_CLASS_$_RTAuthorizationManager
+ _OBJC_CLASS_$_RTAuthorizationManagerNotificationConsoleUserDidChange
+ _OBJC_CLASS_$_RTAuthorizationManagerNotificationRoutineEnabled
+-_OBJC_CLASS_$_RTAuthorizationManager_Embedded
++_OBJC_CLASS_$_RTAuthorizationManager_OSX
+ _OBJC_CLASS_$_RTBatteryManager
+ _OBJC_CLASS_$_RTBatteryManagerNotificationChargerConnected
+ _OBJC_CLASS_$_RTBluetoothManager
+ _OBJC_CLASS_$_RTBluetoothManagerNotificationCarKitConnectionStateChanged
+ _OBJC_CLASS_$_RTBluetoothManagerNotificationConnected
+ _OBJC_CLASS_$_RTBluetoothManagerNotificationDisconnected
+-_OBJC_CLASS_$_RTBluetoothManager_BluetoothManager
+ _OBJC_CLASS_$_RTCLLocationMO
+ _OBJC_CLASS_$_RTCalendarEvent
+ _OBJC_CLASS_$_RTCameraManager
+ _OBJC_CLASS_$_RTCameraManagerNotificationCameraPowerChanged
+-_OBJC_CLASS_$_RTCameraManager_Embedded
+ _OBJC_CLASS_$_RTClientListener
+ _OBJC_CLASS_$_RTClientListenerInternal
+ _OBJC_CLASS_$_RTCloudManagedObject
+@@ -88,6 +86,7 @@
+ _OBJC_CLASS_$_RTInvocationRecord
+ _OBJC_CLASS_$_RTKeybagMonitor
+ _OBJC_CLASS_$_RTKeychainManager
++_OBJC_CLASS_$_RTKeychainManager_OSX
+ _OBJC_CLASS_$_RTLOIHistogramItem
+ _OBJC_CLASS_$_RTLOIHistogramItemMO
+ _OBJC_CLASS_$_RTLaunchServices
+@@ -134,7 +133,7 @@
+ _OBJC_CLASS_$_RTLocationStoreMetrics
+ _OBJC_CLASS_$_RTLockAssertion
+ _OBJC_CLASS_$_RTManagedConfiguration
+-_OBJC_CLASS_$_RTManagedConfiguration_Embedded
++_OBJC_CLASS_$_RTManagedConfiguration_OSX
+ _OBJC_CLASS_$_RTManagedObjectLocationProperties
+ _OBJC_CLASS_$_RTMapItemExtendedAttributesMO
+ _OBJC_CLASS_$_RTMapItemMO
+@@ -168,10 +167,8 @@
+ _OBJC_CLASS_$_RTMotionActivityManagerNotificationMotionSettledStateChange
+ _OBJC_CLASS_$_RTMotionActivityManagerNotificationVehicleConnected
+ _OBJC_CLASS_$_RTMotionActivityManagerNotificationVehicleExit
+-_OBJC_CLASS_$_RTMotionActivityManager_CoreMotion
+ _OBJC_CLASS_$_RTNSStringArrayTransformer
+ _OBJC_CLASS_$_RTNSUUIDTransformer
+-_OBJC_CLASS_$_RTNanoRegistry
+ _OBJC_CLASS_$_RTNavigationManager
+ _OBJC_CLASS_$_RTNavigationManagerRouteSummaryNotification
+ _OBJC_CLASS_$_RTNextPredictedLocationsOfInterestCache
+@@ -207,7 +204,7 @@
+ _OBJC_CLASS_$_RTPlaceTypeClassifierExpertContacts
+ _OBJC_CLASS_$_RTPlaceTypeClassifierExpertInferred
+ _OBJC_CLASS_$_RTPlatform
+-_OBJC_CLASS_$_RTPlatform_MobileGestalt
++_OBJC_CLASS_$_RTPlatform_OSX
+ _OBJC_CLASS_$_RTPotentialNoiseLocation
+ _OBJC_CLASS_$_RTPowerAssertion
+ _OBJC_CLASS_$_RTPredicateInspector
+@@ -229,6 +226,7 @@
+ _OBJC_CLASS_$_RTRelabelerPersister
+ _OBJC_CLASS_$_RTRelabelerPersisterMetrics
+ _OBJC_CLASS_$_RTRelabelerPersisterParameters
++_OBJC_CLASS_$_RTReviewedPlace
+ _OBJC_CLASS_$_RTRuntime
+ _OBJC_CLASS_$_RTScenarioTriggerManager
+ _OBJC_CLASS_$_RTScenarioTriggerManagerNotificationSettled
+@@ -242,7 +240,6 @@
+ _OBJC_CLASS_$_RTSignalGenerator
+ _OBJC_CLASS_$_RTStarkManager
+ _OBJC_CLASS_$_RTStarkManagerNotificationTrustedConnectionEstablished
+-_OBJC_CLASS_$_RTStarkManager_CarKit
+ _OBJC_CLASS_$_RTStateDepcitionOneStatePred
+ _OBJC_CLASS_$_RTStateDepiction
+ _OBJC_CLASS_$_RTStateDepictionAggStateStats
+@@ -279,7 +276,7 @@
+ _OBJC_CLASS_$_RTUserNotifications
+ _OBJC_CLASS_$_RTUserSessionMonitor
+ _OBJC_CLASS_$_RTUserSessionMonitorNotificationConsoleUserDidChange
+-_OBJC_CLASS_$_RTUserSessionMonitor_Embedded
++_OBJC_CLASS_$_RTUserSessionMonitor_OSX
+ _OBJC_CLASS_$_RTVehicleEventHistoryMO
+ _OBJC_CLASS_$_RTVehicleEventMO
+ _OBJC_CLASS_$_RTVehicleEventNotification
+@@ -328,7 +325,6 @@
+ _OBJC_CLASS_$_RTWiFiManagerNotificationLinkStatusChanged
+ _OBJC_CLASS_$_RTWiFiManagerNotificationPowerStatusChanged
+ _OBJC_CLASS_$_RTWiFiManagerNotificationScanResults
+-_OBJC_CLASS_$_RTWiFiManager_MobileWiFi
+ _OBJC_CLASS_$_RTXPC
+ _OBJC_CLASS_$_RTXPCActivityCriteria
+ _OBJC_CLASS_$_RTXPCActivityManager
+@@ -396,19 +392,17 @@
+ _OBJC_METACLASS_$_RTAuthorizationManager
+ _OBJC_METACLASS_$_RTAuthorizationManagerNotificationConsoleUserDidChange
+ _OBJC_METACLASS_$_RTAuthorizationManagerNotificationRoutineEnabled
+-_OBJC_METACLASS_$_RTAuthorizationManager_Embedded
++_OBJC_METACLASS_$_RTAuthorizationManager_OSX
+ _OBJC_METACLASS_$_RTBatteryManager
+ _OBJC_METACLASS_$_RTBatteryManagerNotificationChargerConnected
+ _OBJC_METACLASS_$_RTBluetoothManager
+ _OBJC_METACLASS_$_RTBluetoothManagerNotificationCarKitConnectionStateChanged
+ _OBJC_METACLASS_$_RTBluetoothManagerNotificationConnected
+ _OBJC_METACLASS_$_RTBluetoothManagerNotificationDisconnected
+-_OBJC_METACLASS_$_RTBluetoothManager_BluetoothManager
+ _OBJC_METACLASS_$_RTCLLocationMO
+ _OBJC_METACLASS_$_RTCalendarEvent
+ _OBJC_METACLASS_$_RTCameraManager
+ _OBJC_METACLASS_$_RTCameraManagerNotificationCameraPowerChanged
+-_OBJC_METACLASS_$_RTCameraManager_Embedded
+ _OBJC_METACLASS_$_RTClientListener
+ _OBJC_METACLASS_$_RTClientListenerInternal
+ _OBJC_METACLASS_$_RTCloudManagedObject
+@@ -473,6 +467,7 @@
+ _OBJC_METACLASS_$_RTInvocationRecord
+ _OBJC_METACLASS_$_RTKeybagMonitor
+ _OBJC_METACLASS_$_RTKeychainManager
++_OBJC_METACLASS_$_RTKeychainManager_OSX
+ _OBJC_METACLASS_$_RTLOIHistogramItem
+ _OBJC_METACLASS_$_RTLOIHistogramItemMO
+ _OBJC_METACLASS_$_RTLaunchServices
+@@ -519,7 +514,7 @@
+ _OBJC_METACLASS_$_RTLocationStoreMetrics
+ _OBJC_METACLASS_$_RTLockAssertion
+ _OBJC_METACLASS_$_RTManagedConfiguration
+-_OBJC_METACLASS_$_RTManagedConfiguration_Embedded
++_OBJC_METACLASS_$_RTManagedConfiguration_OSX
+ _OBJC_METACLASS_$_RTManagedObjectLocationProperties
+ _OBJC_METACLASS_$_RTMapItemExtendedAttributesMO
+ _OBJC_METACLASS_$_RTMapItemMO
+@@ -553,10 +548,8 @@
+ _OBJC_METACLASS_$_RTMotionActivityManagerNotificationMotionSettledStateChange
+ _OBJC_METACLASS_$_RTMotionActivityManagerNotificationVehicleConnected
+ _OBJC_METACLASS_$_RTMotionActivityManagerNotificationVehicleExit
+-_OBJC_METACLASS_$_RTMotionActivityManager_CoreMotion
+ _OBJC_METACLASS_$_RTNSStringArrayTransformer
+ _OBJC_METACLASS_$_RTNSUUIDTransformer
+-_OBJC_METACLASS_$_RTNanoRegistry
+ _OBJC_METACLASS_$_RTNavigationManager
+ _OBJC_METACLASS_$_RTNavigationManagerRouteSummaryNotification
+ _OBJC_METACLASS_$_RTNextPredictedLocationsOfInterestCache
+@@ -592,7 +585,7 @@
+ _OBJC_METACLASS_$_RTPlaceTypeClassifierExpertContacts
+ _OBJC_METACLASS_$_RTPlaceTypeClassifierExpertInferred
+ _OBJC_METACLASS_$_RTPlatform
+-_OBJC_METACLASS_$_RTPlatform_MobileGestalt
++_OBJC_METACLASS_$_RTPlatform_OSX
+ _OBJC_METACLASS_$_RTPotentialNoiseLocation
+ _OBJC_METACLASS_$_RTPowerAssertion
+ _OBJC_METACLASS_$_RTPredicateInspector
+@@ -614,6 +607,7 @@
+ _OBJC_METACLASS_$_RTRelabelerPersister
+ _OBJC_METACLASS_$_RTRelabelerPersisterMetrics
+ _OBJC_METACLASS_$_RTRelabelerPersisterParameters
++_OBJC_METACLASS_$_RTReviewedPlace
+ _OBJC_METACLASS_$_RTRuntime
+ _OBJC_METACLASS_$_RTScenarioTriggerManager
+ _OBJC_METACLASS_$_RTScenarioTriggerManagerNotificationSettled
+@@ -627,7 +621,6 @@
+ _OBJC_METACLASS_$_RTSignalGenerator
+ _OBJC_METACLASS_$_RTStarkManager
+ _OBJC_METACLASS_$_RTStarkManagerNotificationTrustedConnectionEstablished
+-_OBJC_METACLASS_$_RTStarkManager_CarKit
+ _OBJC_METACLASS_$_RTStateDepcitionOneStatePred
+ _OBJC_METACLASS_$_RTStateDepiction
+ _OBJC_METACLASS_$_RTStateDepictionAggStateStats
+@@ -664,7 +657,7 @@
+ _OBJC_METACLASS_$_RTUserNotifications
+ _OBJC_METACLASS_$_RTUserSessionMonitor
+ _OBJC_METACLASS_$_RTUserSessionMonitorNotificationConsoleUserDidChange
+-_OBJC_METACLASS_$_RTUserSessionMonitor_Embedded
++_OBJC_METACLASS_$_RTUserSessionMonitor_OSX
+ _OBJC_METACLASS_$_RTVehicleEventHistoryMO
+ _OBJC_METACLASS_$_RTVehicleEventMO
+ _OBJC_METACLASS_$_RTVehicleEventNotification
+@@ -713,7 +706,6 @@
+ _OBJC_METACLASS_$_RTWiFiManagerNotificationLinkStatusChanged
+ _OBJC_METACLASS_$_RTWiFiManagerNotificationPowerStatusChanged
+ _OBJC_METACLASS_$_RTWiFiManagerNotificationScanResults
+-_OBJC_METACLASS_$_RTWiFiManager_MobileWiFi
+ _OBJC_METACLASS_$_RTXPC
+ _OBJC_METACLASS_$_RTXPCActivityCriteria
+ _OBJC_METACLASS_$_RTXPCActivityManager
+@@ -867,6 +859,7 @@
+ _RTPlaceDataMetricsEventCharging
+ _RTPlaceDataMetricsEventScreenLock
+ _RTPlaceDataMetricsEventStaticMotion
++_RTPlaceDataMetricsEventWiFiConnection
+ _RTPlaceDataMetricsLabelHome
+ _RTPlaceDataMetricsLabelOthers
+ _RTPlaceDataMetricsLabelUnknown
+@@ -874,10 +867,6 @@
+ _RTRelabelerErrorDomain
+ _RTRelabelerPersisterErrorDomain
+ _RTStateModelLegacyControllerErrorDomain
+-_RTWiFiManager_WiFiDeviceClientExtendedLinkCallback
+-_RTWiFiManager_WiFiDeviceClientPowerCallback
+-_RTWiFiManager_WiFiDeviceClientScanCallback
+-_RTWiFiManager_WiFiDeviceClientScanUpdateCallback
+ _RTXPCEntitlementCloudSync
+ _RTXPCEntitlementHint
+ _RTXPCEntitlementInternal
+@@ -906,8 +895,6 @@
+ _kClustSizeThresSlv
+ _kConseqNumOfOutl
+ _kConsolidationFailSafeCnt
+-_kDominantActivityFlipInterval
+-_kDominantActivityInterval
+ _kEarthRadius_m
+ _kEmpiricalSigmaRule
+ _kEpsilon_s
+@@ -1098,6 +1085,8 @@
+ _logReferenceLocation
+ _maxIdentifierRollCount
+ _motionActivityTypeForTransitionBetweenGraphs
++_onGUIConsoleSessionChanged
++_onGUISessionUserChanged
+ _onKeybagLockStatusChange
+ _onSiriCloudSyncPreferenceChangedNotification
+ _onUnlockedSinceBoot
+Only in macosx11.2.3-symbols/usr/lib: libcrypto.35.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcrypto.41.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcrypto.42.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcrypto.44.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcrypto.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcsfde.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcups.2.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcupsimage.2.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libcurl.4.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libdpfu.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libdtrace.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libdz.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libfakelink.dylib.nm
+Only in macosx11.2.3-symbols/usr/lib: libhunspell-1.2.0.dylib.nm
