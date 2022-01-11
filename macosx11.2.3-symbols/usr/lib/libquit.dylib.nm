@@ -1,0 +1,8 @@
+_LQCachePort
+_LQForceQuit
+_LQReportCpuResource
+_LQReportPotentialHang
+_LQReportPotentialSpin
+_LQReportStuckApp
+_LQReportUnstuckApp
+_LQReportWakeupsResource

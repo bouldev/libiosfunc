@@ -1,0 +1,9 @@
+_DHCPSCopyDisabledInterfaces
+_DHCPSDHCPLeaseListCreate
+_DHCPSDHCPLeaseListNotificationKey
+_DHCPSDisabledInterfacesNotificationKey
+_kDHCPSPropDHCPHWAddress
+_kDHCPSPropDHCPIPAddress
+_kDHCPSPropDHCPLease
+_kDHCPSPropIdentifier
+_kDHCPSPropName

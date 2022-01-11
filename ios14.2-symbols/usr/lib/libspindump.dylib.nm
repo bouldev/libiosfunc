@@ -1,0 +1,8 @@
+_SPCachePort
+_SPExpectedHIDResponseDelayUntil
+_SPGenerateSpindump
+_SPHIDResponseDelayThreshold
+_SPReportCPUUsageResource
+_SPReportCPUWakeupsResource
+_SPReportDiskWritesResource
+_SPReportHIDResponseDelay

@@ -1,0 +1,15 @@
+_CRCCCITT
+_FCSTable
+_HDLCFrameCloneDownlink
+_HDLCFrameCreateDownlink
+_HDLCFrameCreateDownlinkFake
+_HDLCFrameCreateUplink
+_HDLCFrameEncode
+_HDLCFrameEncodeAndCache
+_HDLCFrameFree
+_HDLCFrameGetFreeSpace
+_HDLCFrameGetMaxEncodedLength
+_HDLCFrameInject
+_HDLCFrameInjectUnsignedChar
+_HDLCFrameInjectUnsignedInt
+_HDLCFrameInjectUnsignedShort

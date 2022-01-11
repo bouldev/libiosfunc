@@ -1,0 +1,9 @@
+_createGTrace
+_destroyGTrace
+_formatToken
+_getBreadcrumbBase
+_getBufferID
+_recordToken
+_recordTokenNT
+_recordTokenNow
+_recordTokenNowNT

@@ -1,0 +1,12 @@
+_SPCachePort
+_SPExpectedHIDResponseDelayUntil
+_SPGenerateSpindump
+_SPHIDResponseDelayThreshold
+_SPNotifyLeavingFullWake
+_SPReportCPUUsageResource
+_SPReportCPUWakeupsResource
+_SPReportDiskWritesResource
+_SPReportHIDResponseDelay
+_SPReportStuckProcess
+_SPReportStuckProcessWithCallback
+_SPReportUnstuckProcess

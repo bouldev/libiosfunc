@@ -1,0 +1,15 @@
+_OBJC_CLASS_$_Libsysdiagnose
+_OBJC_METACLASS_$_Libsysdiagnose
+_metricCompression
+_metricGetLogCopying
+_metricGetLogGeneration
+_metricGetOSLogArchive
+_metricGetTimeSensitive
+_metricLogCopying
+_metricLogGeneration
+_metricOSLogarchiveGeneration
+_metricStartToTar
+_metricTimeSensitive
+_metricTotalSize
+_sdProgressPercent
+_sdProgressPhase

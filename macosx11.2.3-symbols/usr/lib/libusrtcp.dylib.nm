@@ -1,0 +1,5 @@
+_nw_protocol_sfotcp_identifier
+_nw_protocol_tcp_identifier
+_nw_tcp_destroy_globals
+_nw_tcp_init_globals
+_tcp_next_mtu

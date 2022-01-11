@@ -2,4 +2,5 @@
 [ ] Add reexport [libiosexec](https://github.com/ProcursusTeam/libiosexec)
 [ ] Add configure option for reexport libSystem
 [ ] Add configure option for function suffix/prefix
-[ ] Add libdyld missing functions
+[ ] libdyld
+[ ] libicucore, libobjc, 

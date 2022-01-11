@@ -1,0 +1,8 @@
+__libiconv_version
+_iconv
+_iconv_canonicalize
+_iconv_close
+_iconv_open
+_iconvctl
+_iconvlist
+_libiconv_set_relocation_prefix

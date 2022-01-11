@@ -1,0 +1,7 @@
+_RoseBooterAllocate
+_RoseBooterBootChip
+_RoseBooterDestroy
+_RoseBooterGetCal
+_RoseBooterHasFailedForward
+_RoseBooterPreflight
+_RoseBooterSendCal
