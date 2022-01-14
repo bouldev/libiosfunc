@@ -64,8 +64,6 @@
  *
  */
 
-__BEGIN_DECLS
-
 /*!
  * @function os_variant_has_internal_content
  *
@@ -75,8 +73,8 @@ __BEGIN_DECLS
  * @result
  * Returns true if this build has this property.  False otherwise or upon error.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_has_internal_content(const char *subsystem);
 
 /*!
@@ -99,8 +97,8 @@ os_variant_has_internal_content(const char *subsystem);
  * @result
  * Returns true if this build has this property.  False otherwise or upon error.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_has_internal_diagnostics(const char *subsystem);
 
 /*!
@@ -119,8 +117,8 @@ os_variant_has_internal_diagnostics(const char *subsystem);
  * @result
  * Returns true if this build has this property.  False otherwise or upon error.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_has_internal_ui(const char *subsystem);
 
 /*!
@@ -146,8 +144,7 @@ os_variant_has_internal_ui(const char *subsystem);
  * @result
  * Returns true if this build has this property.  False otherwise or upon error.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+static bool
 os_variant_allows_internal_security_policies(const char *subsystem);
 
 /*!
@@ -165,8 +162,8 @@ os_variant_allows_internal_security_policies(const char *subsystem);
  * @result
  * Returns true if this build has this property.  False otherwise or upon error.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_has_factory_content(const char *subsystem);
 
 /*!
@@ -177,8 +174,8 @@ os_variant_has_factory_content(const char *subsystem);
  * @result
  * Returns true if this variant is a darwinOS variant.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_is_darwinos(const char *subsystem);
 
 /*!
@@ -189,8 +186,8 @@ os_variant_is_darwinos(const char *subsystem);
  * @result
  * Returns true if the system is booted with ephemeral storage for the data volume.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_uses_ephemeral_storage(const char *subsystem);
 
 /*!
@@ -207,7 +204,7 @@ os_variant_uses_ephemeral_storage(const char *subsystem);
  * @result
  * Returns true if this variant is BaseSystem
  */
-OS_EXPORT OS_WARN_RESULT
+
 bool
 os_variant_is_basesystem(const char *subsystem);
 
@@ -232,8 +229,8 @@ os_variant_is_basesystem(const char *subsystem);
  * @result
  * Returns true if this variant is a recoveryOS
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_is_recovery(const char *subsystem);
 
 /*!
@@ -257,8 +254,8 @@ os_variant_is_recovery(const char *subsystem);
  * @result
  * Returns true if the system is of the specified variant.
  */
-OS_EXPORT OS_WARN_RESULT
-bool
+
+static bool
 os_variant_check(const char *subsystem, const char *variant);
 
 /*!
@@ -274,14 +271,12 @@ os_variant_check(const char *subsystem, const char *variant);
  * error occurs, @c NULL is returned and @c errno will be set to indicate the
  * error.
  */
-OS_EXPORT OS_WARN_RESULT
-char *
+
+static char *
 os_variant_copy_description(const char *subsystem);
 
-OS_EXPORT
-void
-os_variant_init_4launchd(const char *boot_mode);
 
-__END_DECLS
+static void
+os_variant_init_4launchd(const char *boot_mode);
 
 #endif // __os_variant_H__

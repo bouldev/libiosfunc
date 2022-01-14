@@ -10,7 +10,8 @@ AC_PROG_CC([clang cc])
 AC_PROG_CPP
 AC_PROG_CXX([clang++ c++])
 AC_PROG_RANLIB
-
+AC_PROG_OBJCXX
+AM_PROG_AS
 AC_CONFIG_HEADERS([src/include/config.h])
 
 AC_CONFIG_FILES([
@@ -33,6 +34,8 @@ AC_CONFIG_FILES([
 	src/libSystem/libunc/Makefile
 	src/libicucore/Makefile
 	src/libicucore/io/Makefile
+	src/libobjc/Makefile
+	src/libobjc/asm/Makefile
 ])
 
 AC_TYPE_SIZE_T
@@ -111,7 +114,7 @@ else
 	AC_DEFINE([HAVE_LIBKERN_OSCACHECONTROL_H], [1], [Define to 1 if you have the <libkern/OSCacheControl.h> header file])
 	AC_DEFINE([HAVE_SYS_ICACHE_INVALIDATE], [1], [Define to 1 if you have the `sys_icache_invalidate' function])
 fi
-AC_CHECK_HEADERS([arpa/inet.h netinet/in.h TargetConditionals.h strings.h syslog.h termios.h sys/mman.h sys/mount.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
+AC_CHECK_HEADERS([inttypes.h malloc/malloc.h netdb.h arpa/inet.h netinet/in.h TargetConditionals.h strings.h syslog.h termios.h sys/mman.h sys/mount.h unistd.h utmpx.h paths.h sys/param.h sys/socket.h sys/time.h])
 if test "x$ac_cv_header_TargetConditionals_h" != xyes; then
 	AC_MSG_ERROR([<TargetConditionals.h> missing, please check your iOS SDK])
 elif test "x$ac_cv_header_sys_mman_h" != xyes; then
@@ -140,6 +143,12 @@ elif test "x$ac_cv_header_strings_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <strings.h>])
 elif test "x$ac_cv_header_sys_mount_h" != xyes; then
 	AC_MSG_ERROR([libiosfunc cannot compile without <sys/mount.h>])
+elif test "x$ac_cv_header_inttypes_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <inttypes.h>])
+elif test "x$ac_cv_header_malloc_malloc_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile without <malloc/malloc.h>])
+elif test "x$ac_cv_header_netdb_h" != xyes; then
+	AC_MSG_ERROR([libiosfunc cannot compile withour <netdb.h>])
 fi
 
 dnl AC_CHECK_LIB([stdc++], [__cxa_demangle], [LIBS="$LIBS -lstdc++"], [])
@@ -147,7 +156,7 @@ dnl if test "x$ac_cv_lib_stdcpp___cxa_demangle" != xyes; then
 dnl	AC_CHECK_LIB([c++], [__cxa_demangle], [LIBS="$LIBS -lc++"], [
 dnl		AC_MSG_ERROR([Where is your __cxa_demangle()?])])
 dnl fi
-LIBS="$LIBS -lstdc++ -licucore"
+LIBS="$LIBS -lc++ -lc++abi -lobjc -licucore"
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])
 

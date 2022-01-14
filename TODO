@@ -3,4 +3,5 @@
 [ ] Add configure option for reexport libSystem
 [ ] Add configure option for function suffix/prefix
 [ ] libdyld
-[ ] libicucore, libobjc, 
+[x] libicucore
+[x] libobjc

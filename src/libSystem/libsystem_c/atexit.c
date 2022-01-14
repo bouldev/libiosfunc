@@ -185,6 +185,7 @@ atexit_b(void (^block)(void))
  * Register a function to be performed at exit or when an shared object
  * with given dso handle is unloaded dynamically.
  */
+/*
 AVOID_CONFLICT int
 __cxa_atexit(void (*func)(void *), void *arg, void *dso)
 {
@@ -199,7 +200,7 @@ __cxa_atexit(void (*func)(void *), void *arg, void *dso)
  	error = atexit_register(&fn);	
 	return (error);
 }
-
+*/
 static bool
 __cxa_in_range(const struct __cxa_range_t ranges[],
 			   unsigned int count,

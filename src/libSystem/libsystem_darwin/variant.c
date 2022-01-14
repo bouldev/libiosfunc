@@ -36,7 +36,7 @@
 #include <os/assumes.h>
 #include <os/bsd.h>
 #include <os/stdlib.h>
-#include <os/variant_private.h>
+#include "variant_private.h"
 #include <os/boot_mode_private.h>
 
 extern bool _os_xbs_chrooted;

@@ -1,1 +1,1 @@
-SUBDIRS = libSystem libicucore
+SUBDIRS = libSystem libicucore libobjc

@@ -41,7 +41,8 @@ libiosfunc_la_LIBADD = \
 	src/libSystem/libsystem_secinit/libsystem_secinit.la \
 	src/libSystem/libsystem_trace/libsystem_trace.la \
 	src/libSystem/libunc/libunc.la \
-	src/libicucore/libicucore.la
+	src/libicucore/libicucore.la \
+	src/libobjc/libobjc.la
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
