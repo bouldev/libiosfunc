@@ -42,7 +42,6 @@ typedef u_int64_t uint64_t;
 #define UNIFDEF_LEGACY_UTMP_APIS 1
 #define DS_AVAILABLE 1
 
-/* Move this to xpc/private.h
 typedef struct os_log_pack_s {
     uint64_t        olp_continuous_time;
     struct timespec olp_wall_time;
@@ -51,13 +50,11 @@ typedef struct os_log_pack_s {
     const char     *olp_format;
     uint8_t         olp_data[0];
 } os_log_pack_s, *os_log_pack_t;
-typedef struct _xpc_pipe_s* xpc_pipe_t;
-*/
 
 #define os_log_pack_size(fmt, ...) _os_log_pack_size(sizeof(fmt))
 #define os_log_pack_fill(pack, size, errno, fmt, ...) _os_log_pack_fill(pack, size, errno, NULL, fmt)
 
-extern int _xpc_pipe_s;
+//extern int _xpc_pipe_s;
 extern void xpc_pipe_invalidate(xpc_pipe_t pipe);
 extern xpc_pipe_t xpc_pipe_create(const char *name, uint64_t flags);
 extern int xpc_pipe_routine(xpc_pipe_t pipe, xpc_object_t request, xpc_object_t* reply);

@@ -36,6 +36,7 @@ AC_CONFIG_FILES([
 	src/libicucore/io/Makefile
 	src/libobjc/Makefile
 	src/libobjc/asm/Makefile
+	src/libDHCPServer/Makefile
 ])
 
 AC_TYPE_SIZE_T

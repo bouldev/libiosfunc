@@ -14,7 +14,8 @@ EXTRA_HEADERS = src/include/extra-headers/rune.h \
                 src/include/extra-headers/util.h \
                 src/include/extra-headers/utmp.h \
                 src/include/extra-headers/utmpx.h \
-                src/include/extra-headers/wordexp.h
+                src/include/extra-headers/wordexp.h \
+		src/libDHCPServer/DHCPServer.h
 
 lib_LTLIBRARIES = libiosfunc.la
 

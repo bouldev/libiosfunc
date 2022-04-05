@@ -1,1 +1,1 @@
-SUBDIRS = libSystem libicucore libobjc
+SUBDIRS = libSystem libicucore libobjc libDHCPServer

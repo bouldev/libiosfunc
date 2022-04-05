@@ -224,20 +224,6 @@ extern uint32_t dyld_get_program_sdk_watch_os_version(void) __API_AVAILABLE(watc
 extern uint32_t dyld_get_program_min_watch_os_version(void) __API_AVAILABLE(watchos(3.0));
 #endif
 
-#if TARGET_OS_BRIDGE
-// bridgeOS only.
-// This finds the bridgeOS SDK version that the main executable was built against.
-// Exists in bridgeOSOS 2.0 and later
-extern uint32_t dyld_get_program_sdk_bridge_os_version(void) __API_AVAILABLE(bridgeos(2.0));
-
-// bridgeOS only.
-// This finds the Watch min OS version that the main executable was built to run on.
-// Note: dyld_get_program_min_os_version() returns the iOS equivalent (e.g. 9.0)
-//       whereas this returns the raw bridgeOS version (e.g. 2.0).
-// Exists in bridgeOS 2.0 and later
-extern uint32_t dyld_get_program_min_bridge_os_version(void) __API_AVAILABLE(bridgeos(2.0));
-#endif
-
 //
 // This finds the min OS version a binary was built to run on.
 // Returns zero on error, or if no min OS recorded in binary.
