@@ -157,7 +157,7 @@ dnl if test "x$ac_cv_lib_stdcpp___cxa_demangle" != xyes; then
 dnl	AC_CHECK_LIB([c++], [__cxa_demangle], [LIBS="$LIBS -lc++"], [
 dnl		AC_MSG_ERROR([Where is your __cxa_demangle()?])])
 dnl fi
-LIBS="$LIBS -lc++ -lc++abi -lobjc -licucore"
+LIBS="$LIBS -lc++ -lc++abi -lobjc -licucore -framework SystemConfiguration -framework CoreFoundation"
 
 AC_CHECK_FUNCS([__builtin___clear_cache sysconf])
 

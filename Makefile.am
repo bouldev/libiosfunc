@@ -20,7 +20,10 @@ EXTRA_HEADERS = src/include/extra-headers/rune.h \
 lib_LTLIBRARIES = libiosfunc.la
 
 libiosfunc_la_CFLAGS = @CFLAGS@ -fPIC
-libiosfunc_la_LDFLAGS = -no-undefined -dynamic -release 0.0.1
+libiosfunc_la_LDFLAGS = @LDFLAGS@ \
+	-no-undefined \
+	-dynamic \
+	-release 0.0.1
 
 libiosfunc_la_SOURCES = \
 	src/include/common.h \
@@ -43,7 +46,8 @@ libiosfunc_la_LIBADD = \
 	src/libSystem/libsystem_trace/libsystem_trace.la \
 	src/libSystem/libunc/libunc.la \
 	src/libicucore/libicucore.la \
-	src/libobjc/libobjc.la
+	src/libobjc/libobjc.la \
+	src/libDHCPServer/libDHCPServer.la
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE_NAME@.pc
